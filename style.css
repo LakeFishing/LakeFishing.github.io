@@ -1,0 +1,117 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    min-height: 100%;/*使body的background屬性適用於全版面*/
+}
+body{
+    /*background: linear-gradient(90deg, #56d8e4, #9f01ea);*/
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #4E4E4E;
+}
+
+/*header*/
+
+.header{
+    height: 65px;
+    position: sticky;
+    background-color: #4E4E4E;
+    top: 0;/*配合sticky*/
+    z-index: 10;
+}
+.menu{
+    padding: 20px 0;
+    float: right;
+    font-size: 0px;/*去掉inline造成的空白*/
+}
+.menu .stuff{
+    font-size: 20px;
+    display: inline-block;
+    padding: 0 20px;
+}
+.menu .stuff a{
+    text-decoration: none;
+    color: white;
+}
+
+/*banner*/
+
+.banner{
+    height: 500px;
+    text-align: center;
+}
+.banner .logo{
+    transform: translateY(80px);
+}
+.banner img{
+    height: 200px;
+    width: 200px;
+}
+.banner .title{
+    font-size: 36px;
+    color: white;
+    transform: translateY(120px);
+}
+.banner button{
+    width: 150px;
+    color: #4E4E4E;
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    transform: translateY(150px);
+    padding: 5px;
+    border: 3px white solid;
+    border-radius: 20px;
+}
+
+.banner button:hover{
+    background-color: #4E4E4E;
+    color: white;
+    transition: .2s linear;
+}
+
+/*choosen*/
+
+.choosen{
+    width: 540px;
+    font-size: 0px;
+    text-align: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+.choosen .choose{
+    width: 80px;
+    font-size: 20px;
+    display: inline-block;
+    padding: 0 50px 10px 50px;
+}
+.choosen .choose a{
+    text-decoration: none;
+    color: white;
+}
+.choosen .choose a:hover{
+    color: tomato;
+    transition: .2s linear;
+}
+.choosen .bar{
+    width: 130px;
+    height: 4px;
+    margin-left: 25px;
+    background-color: white;
+    transition: .4s linear;
+}
+.choosen div:nth-child(2):hover ~ .bar{
+    margin-left: 205px;
+}
+.choosen div:nth-child(3):hover ~ .bar{
+    margin-left: 385px;
+}
+
+/*content*/
+
+.content{
+    background-color: white;
+}
