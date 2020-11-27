@@ -91,6 +91,7 @@ body{
     width: 80px;
     font-size: 20px;
     display: inline-block;
+    position: flex;
     margin: 0 50px 10px 50px;
     text-decoration: none;
     font-weight: bold;
@@ -99,9 +100,7 @@ body{
 }
 .choosen .active{
     color: #f1c40f;
-}
-.choosen .choose:hover{
-    color: #f1c40f;
+    transition: .4s linear;
 }
 .choosen .bar{
     width: 130px;
@@ -109,6 +108,9 @@ body{
     margin-left: 25px;
     background-color: #f1c40f;
     transition: .4s linear;
+}
+.choosen div:nth-child(1):hover ~ .bar{
+    margin-left: 25px;
 }
 .choosen div:nth-child(2):hover ~ .bar{
     margin-left: 205px;
