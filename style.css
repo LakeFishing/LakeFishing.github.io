@@ -54,19 +54,24 @@ body{
     transform: translateY(120px);
 }
 .banner button{
+    transform: translateY(150px);
+    border: none;
+    background-color: transparent;
+}
+.banner button a{
     width: 150px;
-    color: #4E4E4E;
     background-color: white;
-    font-family: 'Courier New', Courier, monospace;
+    color: #4E4E4E;
+    text-decoration: none;
     font-size: 24px;
     font-weight: bold;
-    transform: translateY(150px);
+    font-family: 'Courier New', Courier, monospace;
     padding: 5px;
     border: 3px white solid;
     border-radius: 20px;
 }
 
-.banner button:hover{
+.banner button a:hover{
     background-color: #4E4E4E;
     color: white;
     transition: .2s linear;
@@ -86,21 +91,23 @@ body{
     width: 80px;
     font-size: 20px;
     display: inline-block;
-    padding: 0 50px 10px 50px;
-}
-.choosen .choose a{
+    margin: 0 50px 10px 50px;
     text-decoration: none;
+    font-weight: bold;
     color: white;
+    cursor: pointer;
 }
-.choosen .choose a:hover{
-    color: tomato;
-    transition: .2s linear;
+.choosen .choose:nth-child(1){
+    color: #f1c40f;
+}
+.choosen .choose:hover{
+    color: #f1c40f;
 }
 .choosen .bar{
     width: 130px;
     height: 4px;
     margin-left: 25px;
-    background-color: white;
+    background-color: #f1c40f;
     transition: .4s linear;
 }
 .choosen div:nth-child(2):hover ~ .bar{
@@ -113,5 +120,6 @@ body{
 /*content*/
 
 .content{
+    height: 500px;
     background-color: white;
 }

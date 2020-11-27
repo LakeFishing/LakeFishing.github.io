@@ -4,38 +4,29 @@
         <title>Onmyoji Guide</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+        <script>
+            $(".choosen div").click(function(){
+                $(".choose").css("color",$(this).attr("button-color"));
+            });
+        </script>
     </head>
     <body>
         <div class="header">
             <div class="menu">
-                <div class="stuff">
-                    <a href="">Home</a>
-                </div>
-                <div class="stuff">
-                    <a href="">Introduce</a>
-                </div>
-                <div class="stuff">
-                    <a href="">About Me</a>
-                </div>
+                <div class="stuff"><a href="">Home</a></div>
+                <div class="stuff"><a href="">Introduce</a></div>
+                <div class="stuff"><a href="">About Me</a></div>
             </div>
         </div>
         <div class="banner">
-            <div class="logo">
-                <img src="316.png" alt="Onmyoji Guide">
-            </div>
+            <div class="logo"><img src="316.png" alt="Onmyoji Guide"></div>
             <div class="title">Onmyoji Guide</div>
-            <button type="button">Invite</button>
+            <button type="button"><a href="https://discord.com/api/oauth2/authorize?client_id=721313416509390848&permissions=0&scope=bot" target="_blank">Invite</a></button>
         </div>
         <div class="choosen">
-            <div class="choose">
-                <a href="">What</a>
-            </div>
-            <div class="choose">
-                <a href="">Service</a>
-            </div>
-            <div class="choose">
-                <a href="">How</a>
-            </div>
+            <div class="choose" button-color="#f1c40f">What</div>
+            <div class="choose" button-color="#f1c40f">Service</div>
+            <div class="choose" button-color="#f1c40f">How</div>
             <div class="bar"></div>
         </div>
         <div class="content">
