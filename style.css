@@ -97,7 +97,7 @@ body{
     color: white;
     cursor: pointer;
 }
-.choosen .choose:nth-child(1){
+.choosen .active{
     color: #f1c40f;
 }
 .choosen .choose:hover{
