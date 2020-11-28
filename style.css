@@ -6,7 +6,6 @@ html{
     min-height: 100%;/*使body的background屬性適用於全版面*/
 }
 body{
-    /*background: linear-gradient(90deg, #56d8e4, #9f01ea);*/
     font-family: 'Courier New', Courier, monospace;
     background-color: #4E4E4E;
 }
@@ -54,27 +53,28 @@ body{
     transform: translateY(120px);
 }
 .banner button{
-    transform: translateY(150px);
+    transform: translateY(160px);
     border: none;
+    padding: 10px 0;
     background-color: transparent;
 }
 .banner button a{
     width: 150px;
-    background-color: white;
-    color: #4E4E4E;
+    background-color:#4E4E4E;
+    color: #f1c40f;
     text-decoration: none;
-    font-size: 24px;
     font-weight: bold;
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
-    padding: 5px;
-    border: 3px white solid;
-    border-radius: 20px;
+    padding: 10px 30px;
+    border: 2px #f1c40f solid;
 }
 
 .banner button a:hover{
-    background-color: #4E4E4E;
-    color: white;
     transition: .2s linear;
+    background-color:#f1c40f;
+    color: #4E4E4E;
+    font-weight: bold;
 }
 
 /*choosen*/
@@ -86,7 +86,6 @@ body{
     overflow: hidden;
     margin: auto;
 }
-
 .choosen .choose{
     width: 80px;
     font-size: 20px;
@@ -109,19 +108,18 @@ body{
     background-color: #f1c40f;
     transition: .4s linear;
 }
-.choosen div:nth-child(1):hover ~ .bar{
-    margin-left: 25px;
-}
-.choosen div:nth-child(2):hover ~ .bar{
-    margin-left: 205px;
-}
-.choosen div:nth-child(3):hover ~ .bar{
-    margin-left: 385px;
-}
 
 /*content*/
 
 .content{
-    height: 500px;
     background-color: white;
+    font-size: 0;
+}
+.card{
+    display: inline-block;
+    padding: 50px 0;
+}
+.card img{
+    width: 250px;
+    height: 250px;
 }
