@@ -1,66 +1,22 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Onmyoji Guide</title>
+        <title>Javascript Final</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $(".choosen .choose").click(function(){
-                    $(".choosen div").removeClass("active");
-                    $(this).addClass("active");
-                    $(".bar").css("margin-left",$(this).attr("margin-left"));
-                })
-                /*
-                $(".choosen .choose").hover(function(){
-                    $(".bar").css("margin-left",$(this).attr("margin-left"));
-                },
-                function(){
-                    $(".bar").css("margin-left",$(".active").attr("margin-left"));
-                });*/
-            });
-        </script>
+        <link rel="shortcut icon" href="#" />
+        
     </head>
     <body>
-        <div class="header">
-            <div class="menu">
-                <div class="stuff"><a href="">Home</a></div>
-                <div class="stuff"><a href="">Introduce</a></div>
-                <div class="stuff"><a href="">About Me</a></div>
+        <div id="div">
+            <button id="startButton">Start</button>
+            <div id="scorelist">
+                <div id="text">GameOver</div>
+                <div id="title">Score: </div>
+                <div id="score">0</div>
             </div>
+            <audio id="jump" src="audio\\jump.mp3"></audio>
+            <canvas id="myCanvas" height="512" width="1024"></canvas>
+            <script type="text/javascript" src="effect.js"></script>
         </div>
-        <div class="banner">
-            <div class="logo"><img src="./pictures/316.png" alt="Onmyoji Guide"></div>
-            <div class="title">Onmyoji Guide</div>
-            <button><a href="https://discord.com/api/oauth2/authorize?client_id=721313416509390848&permissions=0&scope=bot" target="_blank">Invite</a></button>
-        </div>
-        <div class="choosen">
-            <div class="choose active" margin-left="25px">What</div>
-            <div class="choose" margin-left="205px">Service</div>
-            <div class="choose" margin-left="385px">How</div>
-            <div class="bar"></div>
-        </div>
-        <div class="content">
-            <div class="what">
-                <div class="card">
-                    <div class="text">dddd</div>
-                    <img src="./pictures/question-sign.png">
-                </div>
-                <div class="card">
-                    <div class="text"></div>
-                    <img src="./pictures/gamepad-controller.png">
-                </div>
-                <div class="card">
-                    <div class="text"></div>
-                    <img src="./pictures/discord.png">
-                </div>
-            </div>
-            <div class="service">
-            </div>
-            <div class="how">
-            </div>
-        </div>
-        
     </body>
 </html>

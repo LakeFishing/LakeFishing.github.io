@@ -2,124 +2,56 @@
     margin: 0px;
     padding: 0px;
 }
-html{
-    min-height: 100%;/*使body的background屬性適用於全版面*/
-}
-body{
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #4E4E4E;
-}
-
-/*header*/
-
-.header{
-    height: 65px;
-    position: sticky;
-    background-color: #4E4E4E;
-    top: 0;/*配合sticky*/
-    z-index: 10;
-}
-.menu{
-    padding: 20px 0;
-    float: right;
-    font-size: 0px;/*去掉inline造成的空白*/
-}
-.menu .stuff{
-    font-size: 20px;
-    display: inline-block;
-    padding: 0 20px;
-}
-.menu .stuff a{
-    text-decoration: none;
-    color: white;
-}
-
-/*banner*/
-
-.banner{
-    height: 500px;
-    text-align: center;
-}
-.banner .logo{
-    transform: translateY(80px);
-}
-.banner img{
-    height: 200px;
-    width: 200px;
-}
-.banner .title{
-    font-size: 36px;
-    color: white;
-    transform: translateY(120px);
-}
-.banner button{
-    transform: translateY(160px);
-    border: none;
-    padding: 10px 0;
-    background-color: transparent;
-}
-.banner button a{
-    width: 150px;
-    background-color:#4E4E4E;
-    color: #f1c40f;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px 30px;
-    border: 2px #f1c40f solid;
-}
-
-.banner button a:hover{
-    transition: .2s linear;
-    background-color:#f1c40f;
-    color: #4E4E4E;
-    font-weight: bold;
-}
-
-/*choosen*/
-
-.choosen{
-    width: 540px;
-    font-size: 0px;
-    text-align: center;
-    overflow: hidden;
+div{
+    position: relative;
+    width: 1024px;
     margin: auto;
+    margin-top: 100px;
 }
-.choosen .choose{
-    width: 80px;
-    font-size: 20px;
-    display: inline-block;
-    position: flex;
-    margin: 0 50px 10px 50px;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-}
-.choosen .active{
-    color: #f1c40f;
-    transition: .4s linear;
-}
-.choosen .bar{
-    width: 130px;
-    height: 4px;
-    margin-left: 25px;
-    background-color: #f1c40f;
-    transition: .4s linear;
-}
-
-/*content*/
-
-.content{
-    background-color: white;
-    font-size: 0;
-}
-.card{
-    display: inline-block;
-    padding: 50px 0;
-}
-.card img{
+#startButton{
+    position: absolute;
+    top: 256px;
+    left: 512px;
     width: 250px;
-    height: 250px;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: "Arial Black";
+    padding: 5px 30px;
+    color: white;
+    background-color: transparent;
+    border: white 7px solid;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 10px black;
+    cursor: pointer;
+    display: block;
+}
+#scorelist{
+    position: absolute;
+    width: 180px;
+    text-align: center;
+    top: 256px;
+    left: 512px;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: "Arial Black";
+    padding: 5px 30px;
+    color: white;
+    background-color: transparent;
+    border: white 7px solid;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 10px black;
+    display: none;
+}
+#scorelist #text{
+    margin: 0px;
+    width: auto;
+}
+#title,#score{
+    display: inline;
+}
+canvas{
+    width: 1024px;
+    height: 512px;
+    background: url("pictures\\background02.jpg");
+    background-size: contain;
 }
