@@ -8,6 +8,19 @@ div{
     margin: auto;
     margin-top: 100px;
 }
+#gameover{
+    position: absolute;
+    margin: 0px;
+    left: 512px;
+    top: 150px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Arial Black";
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    font-size: 50px;
+    display: none;
+}
 #startButton{
     position: absolute;
     top: 256px;
@@ -25,12 +38,11 @@ div{
     cursor: pointer;
     display: block;
 }
-#scorelist{
+#shopButton{
     position: absolute;
-    width: 180px;
-    text-align: center;
-    top: 256px;
-    left: 512px;
+    top: 356px;
+    left: 331px;
+    width: 250px;
     transform: translate(-50%, -50%);
     font-size: 25px;
     font-family: "Arial Black";
@@ -40,18 +52,72 @@ div{
     border: white 7px solid;
     text-shadow: 2px 2px 5px black;
     box-shadow: 2px 2px 10px black;
+    cursor: pointer;
     display: none;
 }
-#scorelist #text{
+#scorelist{
+    position: absolute;
+    text-align: center;
+    width: 250px;
+    top: 256px;
+    left: 512px;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: "Arial Black";
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    display: none;
+    margin-top: 0px;
+}
+#total,#score{
+    padding: 5px;
+}
+#text,#total,#score{
     margin: 0px;
     width: auto;
 }
-#title,#score{
-    display: inline;
+#shop{
+    position: absolute;
+    margin: 0px;
+    top: 200px;
+    left: 512px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+}
+#pic{
+    margin: 0px;
+}
+#select{
+    margin: 0px;
+}
+#select button{
+    width: 150px;
+    height: 50px;
+    margin: 15px 25px 0px 25px;
+    font-size: 20px;
+    font-family: "Arial Black";
+    color: white;
+    background-color: transparent;
+    border: white 5px solid;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 10px black;
+    cursor: pointer;
+    transition: .1s linear;
+}
+.choosed{
+    color: green !important;
+    background-color: white !important;
+    text-shadow: none !important;
+}
+img{
+    width: 100px;
+    height: 100px;
+    padding: 0px 50px;
 }
 canvas{
     width: 1024px;
     height: 512px;
-    background: url("pictures\\background02.jpg");
+    background: url("pictures\\background.jpg");
     background-size: contain;
 }

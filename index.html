@@ -8,14 +8,36 @@
     </head>
     <body>
         <div id="div">
-            <button id="startButton">Start</button>
+            <div id="gameover">GameOver</div>
+
             <div id="scorelist">
-                <div id="text">GameOver</div>
-                <div id="title">Score: </div>
-                <div id="score">0</div>
+                <div id="score"></div>
+                <div id="total"></div>
             </div>
-            <audio id="jump" src="audio\\jump.mp3"></audio>
+
+            <button id="shopButton">Shop</button>
+
+            <button id="startButton">Start</button>
+
+            <div id="shop">
+                <div id="pic">
+                    <img src="pictures\01.png" draggable="false">
+                    <img src="pictures\02.png" draggable="false">
+                    <img src="pictures\03.png" draggable="false">
+                </div>
+                <div id="select">
+                    <button id="blue">5 coins</button>
+                    <button id="red" class="choosed">Using</button>
+                    <button id="yellow">15 coins</button>
+                </div>
+            </div>
+
+            <audio id="earn" src="audio\\coin03.mp3"></audio>
+            <audio id="bomb" src="audio\\bomb.mp3"></audio>
+            <audio id="backgroundMusic" src="audio\\Angry Birds Theme Song.mp3" loop="true"></audio>
+
             <canvas id="myCanvas" height="512" width="1024"></canvas>
+
             <script type="text/javascript" src="effect.js"></script>
         </div>
     </body>

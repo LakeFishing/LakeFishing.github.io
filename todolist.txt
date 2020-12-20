@@ -10,9 +10,12 @@ up鍵往上(upPress)---ok
 碰撞金幣(bumpMoney)---ok
 清空離開畫面的金幣(deleteMoney)---ok
 金幣得分顯示(showScore)---ok
-背景音樂
+背景音樂---ok
 音效(audio.play())---ok
+用金幣交換操控物---ok
 
 >>web
 
 開始介面---ok
+商店介面---ok
+按鈕效果

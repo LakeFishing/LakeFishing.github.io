@@ -7,8 +7,6 @@ function play(){
     var height = canvas.height;
 
     //操控物圖片//
-    var bird = new Image();
-    bird.src = "pictures\\316.png"
 
     //操控物初始座標//
     var birdX = width/4;
@@ -44,7 +42,9 @@ function play(){
     var money = new Image();
     money.src = "pictures\\coin.png";
 
-    const jump = document.getElementById("jump");
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    const earn = document.getElementById("earn");
+    const bomb = document.getElementById("bomb");
 
     var score = 0;
     var time = 0;
@@ -59,7 +59,6 @@ function play(){
     function keyDownHandler(e) {
         if(e.keyCode == 38) {
             upPressed = true;
-            /**jump.play();**/
         }
     }
 
@@ -129,6 +128,7 @@ function play(){
                 || (birdX+birdRadius >= wallX[i] && birdY <= height-wallY[i]-hole)//上牆左側//
                 || (birdX >= wallX[i] && birdY <= height-wallY[i]-hole+birdRadius && birdX <= wallX[i]+wallW)//上牆下側//
                 || (Math.sqrt(Math.pow(birdX-wallX[i],2)+Math.pow(birdY-height+wallY[i]+hole,2)) <= birdRadius)){//上牆左下側//
+                    bomb.play();
                     return alive = false;
                 }
             }
@@ -142,7 +142,9 @@ function play(){
                 if (Math.sqrt(Math.pow(birdX-moneyX[i],2)+Math.pow(birdY-moneyY[i],2)) <= birdRadius+25){
                     moneyX.splice(i,1);
                     moneyY.splice(i,1);
+                    earn.play();
                     score += 1;
+                    totalMoney += 1;
                 }
             }
         }
@@ -195,6 +197,7 @@ function play(){
 
             if (birdY > height-birdRadius || birdY < birdRadius) {
                 alive = false;
+                bomb.play();
             }
 
             time += 1;
@@ -208,26 +211,122 @@ function play(){
             }
 
             if(alive == false) {
-                clearInterval();
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                document.getElementById("score").innerHTML = score;
-                document.getElementById("scorelist").style.display = "block";
-                startFluppyBird.innerHTML = "Try Again";
+                document.getElementById("score").innerHTML = "Score: " + score;
+                startFluppyBird.innerHTML = "Retry";
+                startFluppyBird.style.top = 356;
+                startFluppyBird.style.left = 693;
+                total.innerHTML = "Coins: " + totalMoney;
                 startFluppyBird.style.display = "block";
-                console.log("once");
+                document.getElementById("shopButton").innerHTML = "Shop";
+                document.getElementById("shopButton").style.cursor = "pointer";
+                document.getElementById("scorelist").style.display = "block";
+                document.getElementById("shopButton").style.display = "block";
+                document.getElementById("gameover").style.display = "block";
+                backgroundMusic.pause();
+                clearInterval(timeid);
             }
         }
     }
 
     //每十毫秒執行一次start//
     function timer(){
-        setInterval(start, 10);
+        backgroundMusic.play();
+        timeid = setInterval(start, 10);
     }
 
     startFluppyBird.style.display = "none";
     document.getElementById("scorelist").style.display = "none";
+    document.getElementById("shopButton").style.display = "none";
+    document.getElementById("gameover").style.display = "none";
+    document.getElementById("shop").style.display = "none";
+    openShop.style.display = "none";
 
     timer();
 }
+
+function shop(){
+    document.getElementById("shop").style.display = "block";
+    document.getElementById("scorelist").style.display = "none";
+    document.getElementById("gameover").style.display = "none";
+    document.getElementById("shopButton").style.cursor = "default";
+    document.getElementById("shopButton").innerHTML = "Coins: " + totalMoney;
+
+    blue.addEventListener("click", blueBird);
+    red.addEventListener("click", redBird);
+    yellow.addEventListener("click", yellowBird);
+
+    function blueBird(){
+        if (totalMoney >= 5 && blueSoldOut == false){
+            totalMoney -= 5;
+            blueSoldOut = true;
+        }
+        if (blueSoldOut == true){
+            bird.src = "pictures\\01.png";
+            blue.innerHTML = "Using";
+            blue.setAttribute("class", "choosed");
+
+            if (red.innerHTML == "Using"){
+                red.innerHTML = "Select";
+                red.removeAttribute("class");
+            }
+            else if (yellow.innerHTML == "Using"){
+                yellow.innerHTML = "Select";
+                yellow.removeAttribute("class");
+            }
+        }
+        document.getElementById("shopButton").innerHTML = "Coins: " + totalMoney;
+    }
+    function redBird(){
+        bird.src = "pictures\\02.png";
+        red.innerHTML = "Using";
+        red.setAttribute("class", "choosed");
+        if (blue.innerHTML == "Using"){
+            blue.innerHTML = "Select";
+            blue.removeAttribute("class");
+        }
+        else if (yellow.innerHTML == "Using"){
+            yellow.innerHTML = "Select";
+            yellow.removeAttribute("class");
+        }
+    }
+    function yellowBird(){
+        if (totalMoney >= 15 && yellowSoldOut == false){
+            totalMoney -= 15;
+            yellowSoldOut = true;
+        }
+        if (yellowSoldOut == true){
+            bird.src = "pictures\\03.png";
+            yellow.innerHTML = "Using";
+            yellow.setAttribute("class", "choosed");
+
+            if (blue.innerHTML == "Using"){
+                blue.innerHTML = "Select";
+                blue.removeAttribute("class");
+            }
+            else if (red.innerHTML == "Using"){
+                red.innerHTML = "Select";
+                red.removeAttribute("class");
+            }
+        }
+        document.getElementById("shopButton").innerHTML = "Coins: " + totalMoney;
+    }
+}
+
+var bird = new Image();
+bird.src = "pictures\\02.png";
+
+var blue = document.getElementById("blue");
+var red = document.getElementById("red");
+var yellow = document.getElementById("yellow");
+var total = document.getElementById("total");
 var startFluppyBird = document.getElementById("startButton");
-startFluppyBird.addEventListener("click", play, false);
+var openShop = document.getElementById("shopButton");
+
+var totalMoney = 0;
+var blueSoldOut = false;
+var yellowSoldOut = false;
+var timeid
+
+startFluppyBird.addEventListener("click", play);
+openShop.addEventListener("click", shop);
