@@ -1,12 +1,10 @@
 function play(){
 
-    var canvas = document.getElementById("myCanvas");
+    var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
     var width = canvas.width;
     var height = canvas.height;
-
-    //操控物圖片//
 
     //操控物初始座標//
     var birdX = width/4;
@@ -161,9 +159,15 @@ function play(){
 
     //顯示分數//
     function showScore(){
-        ctx.font = "25px Arial Black";
+        ctx.font = "30px Arial Black";
         ctx.fillStyle = "white";
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+        ctx.shadowColor = "black";
+        ctx.shadowBlur = 5;
         ctx.fillText("Score: " + score, 450, 100);
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
     }
 
     //開始//
@@ -218,10 +222,11 @@ function play(){
                 startFluppyBird.style.left = 693;
                 total.innerHTML = "Coins: " + totalMoney;
                 startFluppyBird.style.display = "block";
-                document.getElementById("shopButton").innerHTML = "Shop";
-                document.getElementById("shopButton").style.cursor = "pointer";
+                openShop.innerHTML = "Shop";
+                openShop.style.cursor = "pointer";
+                openShop.style.display = "block";
+                blackGlass.setAttribute("class", "blur")
                 document.getElementById("scorelist").style.display = "block";
-                document.getElementById("shopButton").style.display = "block";
                 document.getElementById("gameover").style.display = "block";
                 backgroundMusic.pause();
                 clearInterval(timeid);
@@ -236,10 +241,14 @@ function play(){
     }
 
     startFluppyBird.style.display = "none";
+    openShop.style.display = "none";
+    blackGlass.removeAttribute("class")
     document.getElementById("scorelist").style.display = "none";
-    document.getElementById("shopButton").style.display = "none";
     document.getElementById("gameover").style.display = "none";
     document.getElementById("shop").style.display = "none";
+    document.getElementById("rules").style.display = "none";
+    document.getElementById("title").style.display ="none";
+    openRule.style.display = "none";
     openShop.style.display = "none";
 
     timer();
@@ -249,8 +258,8 @@ function shop(){
     document.getElementById("shop").style.display = "block";
     document.getElementById("scorelist").style.display = "none";
     document.getElementById("gameover").style.display = "none";
-    document.getElementById("shopButton").style.cursor = "default";
-    document.getElementById("shopButton").innerHTML = "Coins: " + totalMoney;
+    openShop.style.cursor = "default";
+    openShop.innerHTML = "Coins: " + totalMoney;
 
     blue.addEventListener("click", blueBird);
     red.addEventListener("click", redBird);
@@ -309,8 +318,24 @@ function shop(){
                 red.removeAttribute("class");
             }
         }
-        document.getElementById("shopButton").innerHTML = "Coins: " + totalMoney;
+        openShop.innerHTML = "Coins: " + totalMoney;
     }
+}
+
+function rule(){
+    blackGlass.setAttribute("class", "blur");
+    startFluppyBird.style.display = "none";
+    openRule.style.display = "none";
+    document.getElementById("title").style.display = "none";
+    startFluppyBird.style.top = 356;
+    startFluppyBird.style.left = 693;
+    setTimeout(wait, 10);
+
+    document.getElementById("rules").style.display = "block";
+}
+
+function wait(){
+    startFluppyBird.style.display = "block";
 }
 
 var bird = new Image();
@@ -321,7 +346,9 @@ var red = document.getElementById("red");
 var yellow = document.getElementById("yellow");
 var total = document.getElementById("total");
 var startFluppyBird = document.getElementById("startButton");
+var openRule = document.getElementById("ruleButton")
 var openShop = document.getElementById("shopButton");
+var blackGlass = document.getElementById("glass");
 
 var totalMoney = 0;
 var blueSoldOut = false;
@@ -329,4 +356,5 @@ var yellowSoldOut = false;
 var timeid
 
 startFluppyBird.addEventListener("click", play);
+openRule.addEventListener("click", rule);
 openShop.addEventListener("click", shop);

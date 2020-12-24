@@ -2,11 +2,27 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    background: #34495e;
+}
 div{
     position: relative;
     width: 1024px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
+}
+#title{
+    position: absolute;
+    margin: 0px;
+    left: 512px;
+    top: 150px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Arial Black";
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    font-size: 60px;
+    display: block;
 }
 #gameover{
     position: absolute;
@@ -18,7 +34,7 @@ div{
     font-family: "Arial Black";
     color: white;
     text-shadow: 2px 2px 5px black;
-    font-size: 50px;
+    font-size: 60px;
     display: none;
 }
 #startButton{
@@ -37,6 +53,45 @@ div{
     box-shadow: 2px 2px 10px black;
     cursor: pointer;
     display: block;
+    transition: .3s linear;
+}
+#startButton:hover{
+    transform: translate(-50%, -50%) scale(1.04);
+}
+#ruleButton{
+    position: absolute;
+    top: 350px;
+    left: 512px;
+    width: 250px;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: "Arial Black";
+    padding: 5px 30px;
+    color: white;
+    background-color: transparent;
+    border: white 7px solid;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 10px black;
+    cursor: pointer;
+    display: block;
+    transition: .3s linear;
+}
+#ruleButton:hover{
+    transform: translate(-50%, -50%) scale(1.04);
+}
+#rules{
+    position: absolute;
+    margin: 0px;
+    color: white;
+    width: 700px;
+    top: 200px;
+    left: 512px;
+    font-size: 25px;
+    font-family: "Arial Black";
+    transform: translate(-50%, -50%);
+    line-height: 60px;
+    text-shadow: 2px 2px 5px black;
+    display: none;
 }
 #shopButton{
     position: absolute;
@@ -54,6 +109,10 @@ div{
     box-shadow: 2px 2px 10px black;
     cursor: pointer;
     display: none;
+    transition: .3s linear;
+}
+#shopButton:hover{
+    transform: translate(-50%, -50%) scale(1.04);
 }
 #scorelist{
     position: absolute;
@@ -110,7 +169,7 @@ div{
     background-color: white !important;
     text-shadow: none !important;
 }
-img{
+#pic img{
     width: 100px;
     height: 100px;
     padding: 0px 50px;
@@ -120,4 +179,21 @@ canvas{
     height: 512px;
     background: url("pictures\\background.jpg");
     background-size: contain;
+}
+#ad{
+    width: 1024px;
+    height: 140px;
+    margin-top: 10px;
+    transition: .3s linear;
+}
+#ad:hover{
+    transform: scale(0.98);
+}
+.blur{
+    position: absolute;
+    width: 1024px;
+    height: 512px;
+    background-color: black;
+    opacity: 0.3;
+    margin: 0px;
 }
