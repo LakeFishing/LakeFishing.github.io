@@ -217,11 +217,11 @@ function play(){
             if(alive == false) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 document.getElementById("score").innerHTML = "Score: " + score;
-                startFluppyBird.innerHTML = "Retry";
-                startFluppyBird.style.top = 356;
-                startFluppyBird.style.left = 693;
+                startGame.innerHTML = "Retry";
+                startGame.style.top = 356;
+                startGame.style.left = 693;
                 total.innerHTML = "Coins: " + totalMoney;
-                startFluppyBird.style.display = "block";
+                startGame.style.display = "block";
                 openShop.innerHTML = "Shop";
                 openShop.style.cursor = "pointer";
                 openShop.style.display = "block";
@@ -240,7 +240,7 @@ function play(){
         timeid = setInterval(start, 10);
     }
 
-    startFluppyBird.style.display = "none";
+    startGame.style.display = "none";
     openShop.style.display = "none";
     blackGlass.removeAttribute("class")
     document.getElementById("scorelist").style.display = "none";
@@ -324,18 +324,18 @@ function shop(){
 
 function rule(){
     blackGlass.setAttribute("class", "blur");
-    startFluppyBird.style.display = "none";
+    startGame.style.display = "none";
     openRule.style.display = "none";
     document.getElementById("title").style.display = "none";
-    startFluppyBird.style.top = 356;
-    startFluppyBird.style.left = 693;
+    startGame.style.top = 356;
+    startGame.style.left = 693;
     setTimeout(wait, 10);
 
     document.getElementById("rules").style.display = "block";
 }
 
 function wait(){
-    startFluppyBird.style.display = "block";
+    startGame.style.display = "block";
 }
 
 var bird = new Image();
@@ -345,7 +345,7 @@ var blue = document.getElementById("blue");
 var red = document.getElementById("red");
 var yellow = document.getElementById("yellow");
 var total = document.getElementById("total");
-var startFluppyBird = document.getElementById("startButton");
+var startGame = document.getElementById("startButton");
 var openRule = document.getElementById("ruleButton")
 var openShop = document.getElementById("shopButton");
 var blackGlass = document.getElementById("glass");
@@ -355,6 +355,6 @@ var blueSoldOut = false;
 var yellowSoldOut = false;
 var timeid
 
-startFluppyBird.addEventListener("click", play);
+startGame.addEventListener("click", play);
 openRule.addEventListener("click", rule);
 openShop.addEventListener("click", shop);
