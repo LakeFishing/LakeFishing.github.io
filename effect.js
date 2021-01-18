@@ -217,14 +217,47 @@ function play(){
             if(alive == false) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 document.getElementById("score").innerHTML = "Score: " + score;
+
+                if (recordList.length < 3){
+                    recordList.push([myName, score]);
+                }
+                else{
+                    var push = false;
+                    for(var i = 0; i < recordList.length; i++){
+                        if (score >= recordList[i][1]){
+                            push = true;
+                        }
+                    }
+                    if (push == true){
+                        recordList.push([myName, score]);
+                    }
+                }
+
+                if (recordList.length > 3){
+                    var min = 0;
+                    for(var i=0; i < recordList.length-1; i++){
+                        if (recordList[min][1] < recordList[i+1][1]){
+                            min = min;
+                        }
+                        else{
+                            min = i+1;
+                        }
+                    }
+                    recordList.splice(min, 1);
+                    localStorage.setItem("recordList", JSON.stringify(recordList))
+                }
+                else{
+                    localStorage.setItem("recordList", JSON.stringify(recordList));
+                }
                 startGame.innerHTML = "Retry";
                 startGame.style.top = 356;
-                startGame.style.left = 693;
+                startGame.style.left = 724;
                 total.innerHTML = "Coins: " + totalMoney;
                 startGame.style.display = "block";
                 openShop.innerHTML = "Shop";
                 openShop.style.cursor = "pointer";
                 openShop.style.display = "block";
+                openRecord.style.display = "block";
                 blackGlass.setAttribute("class", "blur")
                 document.getElementById("scorelist").style.display = "block";
                 document.getElementById("gameover").style.display = "block";
@@ -240,6 +273,16 @@ function play(){
         timeid = setInterval(start, 10);
     }
 
+    function typeName(){
+        blackGlass.setAttribute("class", "blur");
+        startGame.style.top = 380;
+        startGame.style.left = 693;
+        setTimeout(wait, 10);
+        nameReady = true;
+    
+        document.getElementById("form").style.display = "block";
+    }
+
     startGame.style.display = "none";
     openShop.style.display = "none";
     blackGlass.removeAttribute("class")
@@ -248,13 +291,23 @@ function play(){
     document.getElementById("shop").style.display = "none";
     document.getElementById("rules").style.display = "none";
     document.getElementById("title").style.display ="none";
+    document.getElementById("form").style.display = "none";
+    document.getElementById("record").style.display = "none";
     openRule.style.display = "none";
     openShop.style.display = "none";
+    openRecord.style.display = "none";
 
-    timer();
+    if (nameReady == false){
+        typeName();
+    }
+    else{
+        myName = document.myform.myname.value;
+        timer();
+    }
 }
 
 function shop(){
+    openRecord.style.display = "none";
     document.getElementById("shop").style.display = "block";
     document.getElementById("scorelist").style.display = "none";
     document.getElementById("gameover").style.display = "none";
@@ -327,7 +380,7 @@ function rule(){
     startGame.style.display = "none";
     openRule.style.display = "none";
     document.getElementById("title").style.display = "none";
-    startGame.style.top = 356;
+    startGame.style.top = 380;
     startGame.style.left = 693;
     setTimeout(wait, 10);
 
@@ -337,6 +390,24 @@ function rule(){
 function wait(){
     startGame.style.display = "block";
 }
+
+function record(){
+    openShop.style.display = "none";
+    openRecord.style.display = "none";
+    document.getElementById("scorelist").style.display = "none";
+    document.getElementById("gameover").style.display = "none";
+    var data = localStorage.getItem("recordList");
+    var dataParse = JSON.parse(data);
+    dataParse.sort(function(x, y){
+        return y[1] - x[1];
+    });
+    document.getElementById("record1").innerHTML = "No.1: " + dataParse[0][0] + "   " + dataParse[0][1];
+    document.getElementById("record2").innerHTML = "No.2: " + dataParse[1][0] + "   " + dataParse[1][1];
+    document.getElementById("record3").innerHTML = "No.3: " + dataParse[2][0] + "   " + dataParse[2][1];
+    document.getElementById("record").style.display = "block";
+}
+
+
 
 var bird = new Image();
 bird.src = "pictures\\02.png";
@@ -348,13 +419,17 @@ var total = document.getElementById("total");
 var startGame = document.getElementById("startButton");
 var openRule = document.getElementById("ruleButton")
 var openShop = document.getElementById("shopButton");
+var openRecord = document.getElementById("recordButton");
 var blackGlass = document.getElementById("glass");
 
 var totalMoney = 0;
 var blueSoldOut = false;
 var yellowSoldOut = false;
-var timeid
+var nameReady = false;
+var recordList = JSON.parse(localStorage.getItem("recordList")) || [];
+var timeid;
 
 startGame.addEventListener("click", play);
 openRule.addEventListener("click", rule);
 openShop.addEventListener("click", shop);
+openRecord.addEventListener("click", record);

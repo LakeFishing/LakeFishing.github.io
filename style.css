@@ -37,11 +37,30 @@ div{
     font-size: 60px;
     display: none;
 }
+#record{
+    position: absolute;
+    text-align: left;
+    width: 200px;
+    top: 256px;
+    left: 512px;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: "Arial Black";
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    display: none;
+    margin-top: 0px;
+}
+#record1,#record2,#record3{
+    padding: 5px;
+    margin: 0px;
+    width: auto;
+}
 #startButton{
     position: absolute;
     top: 256px;
     left: 512px;
-    width: 250px;
+    width: 200px;
     transform: translate(-50%, -50%);
     font-size: 25px;
     font-family: "Arial Black";
@@ -62,7 +81,7 @@ div{
     position: absolute;
     top: 350px;
     left: 512px;
-    width: 250px;
+    width: 200px;
     transform: translate(-50%, -50%);
     font-size: 25px;
     font-family: "Arial Black";
@@ -96,8 +115,8 @@ div{
 #shopButton{
     position: absolute;
     top: 356px;
-    left: 331px;
-    width: 250px;
+    left: 300px;
+    width: 200px;
     transform: translate(-50%, -50%);
     font-size: 25px;
     font-family: "Arial Black";
@@ -114,10 +133,31 @@ div{
 #shopButton:hover{
     transform: translate(-50%, -50%) scale(1.04);
 }
+#recordButton{
+    position: absolute;
+    top: 356px;
+    left: 512px;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: "Arial Black";
+    padding: 5px 30px;
+    color: white;
+    background-color: transparent;
+    border: white 7px solid;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 10px black;
+    cursor: pointer;
+    display: none;
+    transition: .3s linear;
+}
+#recordButton:hover{
+    transform: translate(-50%, -50%) scale(1.04);
+}
 #scorelist{
     position: absolute;
     text-align: center;
-    width: 250px;
+    width: 300px;
     top: 256px;
     left: 512px;
     transform: translate(-50%, -50%);
@@ -127,6 +167,29 @@ div{
     text-shadow: 2px 2px 5px black;
     display: none;
     margin-top: 0px;
+}
+#form{
+    display: none;
+}
+#blank{
+    position: absolute;
+    top: 225px;
+    left: 512px;
+    width: 250px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-family: "Arial Black";
+    padding: 5px 30px;
+    color: white;
+    background-color: transparent;
+    border: white 7px solid;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 10px black;
+    transition: .3s linear;
+}
+#blank::placeholder{
+    color: white;
 }
 #total,#score{
     padding: 5px;
