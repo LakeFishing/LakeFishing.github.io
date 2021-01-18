@@ -402,8 +402,12 @@ function record(){
         return y[1] - x[1];
     });
     document.getElementById("record1").innerHTML = "No.1: " + dataParse[0][0] + "   " + dataParse[0][1];
-    document.getElementById("record2").innerHTML = "No.2: " + dataParse[1][0] + "   " + dataParse[1][1];
-    document.getElementById("record3").innerHTML = "No.3: " + dataParse[2][0] + "   " + dataParse[2][1];
+    if (dataParse.length > 1){
+        document.getElementById("record2").innerHTML = "No.2: " + dataParse[1][0] + "   " + dataParse[1][1];
+    }
+    if (dataParse.length > 2){
+        document.getElementById("record3").innerHTML = "No.3: " + dataParse[2][0] + "   " + dataParse[2][1];
+    }
     document.getElementById("record").style.display = "block";
 }
 
