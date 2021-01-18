@@ -292,7 +292,8 @@ function play(){
     document.getElementById("rules").style.display = "none";
     document.getElementById("title").style.display ="none";
     document.getElementById("form").style.display = "none";
-    document.getElementById("record").style.display = "none";
+    document.getElementById("recordName").style.display = "none";
+    document.getElementById("recordScore").style.display = "none";
     openRule.style.display = "none";
     openShop.style.display = "none";
     openRecord.style.display = "none";
@@ -401,14 +402,18 @@ function record(){
     dataParse.sort(function(x, y){
         return y[1] - x[1];
     });
-    document.getElementById("record1").innerHTML = "No.1: " + dataParse[0][0] + "   " + dataParse[0][1];
+    document.getElementById("recordName1").innerHTML = "No.1: " + dataParse[0][0];
+    document.getElementById("recordScore1").innerHTML = "Score: " + dataParse[0][1];
     if (dataParse.length > 1){
-        document.getElementById("record2").innerHTML = "No.2: " + dataParse[1][0] + "   " + dataParse[1][1];
+        document.getElementById("recordName2").innerHTML = "No.2: " + dataParse[1][0];
+        document.getElementById("recordScore2").innerHTML = "Score: " + dataParse[1][1];
     }
     if (dataParse.length > 2){
-        document.getElementById("record3").innerHTML = "No.3: " + dataParse[2][0] + "   " + dataParse[2][1];
+        document.getElementById("recordName3").innerHTML = "No.3: " + dataParse[2][0];
+        document.getElementById("recordScore3").innerHTML = "Score: " + dataParse[2][1];
     }
-    document.getElementById("record").style.display = "block";
+    document.getElementById("recordName").style.display = "block";
+    document.getElementById("recordScore").style.display = "block";
 }
 
 
