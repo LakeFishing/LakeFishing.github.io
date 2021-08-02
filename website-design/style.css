@@ -12,6 +12,23 @@ html, body {
   overflow-y: hidden;
 }
 
+h1 {
+  font-weight: 500;
+  font-size: 36px;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+p {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: 2px;
+}
+
 .main {
   height: 100vh;
   width: 100%;
@@ -154,48 +171,129 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#page1 {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(4, 9, 30, 0.8)), to(rgba(4, 9, 30, 0.8))), url("images\\red_building.jpg");
-  background-image: linear-gradient(rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("images\\red_building.jpg");
-  background-position: center;
-  background-size: cover;
   padding: 0px 20px;
 }
 
+#page1 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(4, 9, 30, 0.5)), to(rgba(4, 9, 30, 0.5))), url("images\\image0.jpg");
+  background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url("images\\image0.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 #page1 svg {
-  width: 800px;
+  max-width: 800px;
 }
 
 #page1 .cls-1 {
   fill: white;
 }
 
-#page2 {
-  background-color: #2c3e50;
+#page3 {
+  background-color: #95a5a6;
 }
 
-#page2 svg {
-  border: 1px solid black;
-  width: 500px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+#page3 div {
+  text-align: center;
+  max-width: 800px;
 }
 
-#page2 div {
-  border: 1px solid black;
-  width: 480px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+#page3 div h3::after {
+  content: " ";
+  max-width: 200px;
+  height: 1px;
+  background: black;
+  display: block;
+  margin: 10px auto 15px auto;
 }
 
-#page2 .cls-1 {
-  fill: white;
-  stroke: black;
-  stroke-width: 2px;
+#page3 div .history_pages {
+  background-color: white;
+  width: 800px;
+  height: 360px;
+  overflow: hidden;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-shadow: 5px 5px 10px 1px #777;
+          box-shadow: 5px 5px 10px 1px #777;
+}
+
+#page3 div .history_pages div {
+  text-align: left;
+  background-color: white;
+  height: 360px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#page3 div .history_pages p {
+  margin: 0px 84px;
+}
+
+#page3 div .history_pages .images {
+  height: 360px;
+  overflow: hidden;
+}
+
+#page3 div .history_pages .images img {
+  height: 360px;
+}
+
+input[name="r1"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.change_page {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 50%;
+  bottom: 100px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.change_page .r1_btn {
+  width: 56px;
+  height: 16px;
+  border: 3px solid white;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#r1-1:checked ~ #history_pages_1 {
+  margin-left: 0px;
+}
+
+#r1-2:checked ~ #history_pages_1 {
+  margin-left: -800px;
+}
+
+#r1-3:checked ~ #history_pages_1 {
+  margin-left: -1600px;
+}
+
+#r1-4:checked ~ #history_pages_1 {
+  margin-left: -2400px;
+}
+
+.r1_btn:hover {
+  background-color: white;
+}
+
+.selected {
+  background-color: white;
 }
 
 @media (max-height: 720px) {
@@ -251,6 +349,15 @@ html, body {
     transition: all 0.3s ease;
     overflow-y: scroll;
     scroll-behavior: smooth;
+  }
+  #page3 div .history_pages {
+    height: auto;
+  }
+  #page3 div .history_pages p {
+    margin: 20px 30px;
+  }
+  #page3 div .history_pages .images {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
