@@ -18,6 +18,10 @@ h1{
     font-weight: 500;
     font-size: 36px;
 }
+h2{
+    font-weight: 500;
+    font-size: 20px;
+}
 h3{
     font-weight: 300;
     font-size: 18px;
@@ -150,14 +154,8 @@ p{
 #page1 .cls-1{
     fill: white;
 }
-#page3{
-    background-color: #95a5a6;
-}
-#page3 div{
-    text-align: center;
-    max-width: 800px;
-}
-#page3 div h3::after{
+
+section div h3::after{
     content: " ";
     max-width: 200px;
     height: 1px;
@@ -165,30 +163,41 @@ p{
     display: block;
     margin: 10px auto 15px auto;
 }
-#page3 div .history_pages{
+
+/*----------歷史故事----------*/
+#page3{
+    background-color: #95a5a6;
+}
+#page3 div{
+    text-align: center;
+    max-width: 800px;
+}
+.history_pages{
     background-color: white;
     width: 800px;
     height: $history_pages_height;
     overflow: hidden;
-    display: inline-flex;
+    display: flex;
     box-shadow: 5px 5px 10px 1px #777;
 }
-#page3 div .history_pages div{
-    text-align: left;
+.history_pages div{
+    width: 800px;
     background-color: white;
     height: $history_pages_height;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     transition: 1s;
 }
-#page3 div .history_pages p{
-    margin: 0px 84px;
+.history_pages p{
+    text-align: left;
+    margin: 0px 64px;
+    text-indent: 2em;
 }
-#page3 div .history_pages .images{
+.history_pages .images{
     height: $history_pages_height;
     overflow: hidden;
 }
-#page3 div .history_pages .images img{
+.history_pages .images img{
     height: $history_pages_height;
 }
 input[name="r1"]{
@@ -209,6 +218,7 @@ input[name="r1"]{
     margin: 10px;
     cursor: pointer;
     transition: 0.2s;
+    box-shadow: 3px 3px 8px 1px #777;
 }
 #r1-1:checked ~ #history_pages_1{
     margin-left: 0px;
@@ -229,7 +239,60 @@ input[name="r1"]{
     background-color: white;
 }
 
+/*----------歷史故事----------*/
 
+/*----------建築特色----------*/
+#page4{
+    // background-color: #95afc0;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images\\image3.png");
+    background-position: center;
+    background-size: cover;
+}
+#page4 div{
+    text-align: center;
+    max-width: 1200px;
+    align-items: flex-start;
+}
+#page4 div h1, #page4 div h3{
+    color: white;
+}
+#page4 div h3::after{
+    background: white;
+}
+.structure_pages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.structure_pages div{
+    background-color: white;
+    padding: 20px 20px;
+    margin: 10px;
+    color: black;
+    transition: transform .2s ease;
+    cursor: pointer;
+}
+.structure_pages div:hover{
+    transform: scale(1.02);
+}
+.structure_pages_1{
+    flex-basis: 300px;
+}
+.structure_pages_2{
+    flex-basis: 400px;
+}
+.structure_pages_3{
+    flex-basis: 520px;
+}
+// .structure_pages_2 .images{
+//     width: 400px;
+//     flex-basis: 500px;
+//     height: 200px;
+//     overflow: hidden;
+//     margin: auto;
+// }
+
+/*----------建築特色----------*/
 
 
 @media (max-height: 720px) {
@@ -282,13 +345,94 @@ input[name="r1"]{
         overflow-y: scroll;
         scroll-behavior: smooth;
     }
-    #page3 div .history_pages{
-        height: auto;
+    .content section{
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        align-items: center;
+        padding: 0px 20px;
     }
-    #page3 div .history_pages p{
-        margin: 20px 30px;
+
+/*----------頁長度----------*/
+
+    #page1{
+        height: 100%;
     }
-    #page3 div .history_pages .images{
-        display: none;
+    #page3{
+        height: 800px;
     }
+    #page4{
+        height: 1500px;
+    }
+
+/*----------頁長度----------*/
+
+/*----------歷史故事----------*/
+    #page3{
+        padding: 0px 40px;
+    }
+    #page3 div{
+        width: 100%;
+    }
+    #page3 div .change_page{
+        height: fit-content;
+        bottom: 30px;
+        justify-content: center;
+    }
+
+    .history_pages{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .history_pages div{
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+    }
+    .history_pages div p{
+        margin: 20px;
+    }
+    .history_pages div .images{
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .history_pages div .images img{
+        width: 100%;
+        object-fit: cover;
+    }
+    #r1-1:checked ~ #history_pages_1{
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    #r1-2:checked ~ #history_pages_1{
+        margin-left: 0px;
+        margin-top: -500px;
+    }
+    #r1-3:checked ~ #history_pages_1{
+        margin-left: 0px;
+        margin-top: -1000px;
+    }
+    #r1-4:checked ~ #history_pages_1{
+        margin-left: 0px;
+        margin-top: -1500px;
+    }
+
+/*----------歷史故事----------*/
+
+/*----------建築特色----------*/
+
+    #page4 div{
+        max-width: 100%;
+        align-items: center;
+    }
+    .structure_pages_1{
+        flex-basis: 400px;
+    }
+
+/*----------建築特色----------*/
 }
