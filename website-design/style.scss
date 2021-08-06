@@ -149,7 +149,7 @@ p{
     background-size: cover;
 }
 #page1 svg{
-    max-width: 800px;
+    width: 800px;
 }
 #page1 .cls-1{
     fill: white;
@@ -397,7 +397,7 @@ input[name="r1"]{
     .sideBar.active{
         height: 100%;
         border-radius: 0px;
-        padding: 0px 28px;
+        padding: 6px 14px;
         top: 0px;
         left: 0px;
     }
