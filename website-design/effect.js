@@ -1,3 +1,4 @@
+
 let btn = document.querySelector("#btn");
 let sideBar = document.querySelector(".sideBar");
 let r1_btn = document.getElementsByClassName("r1_btn");
