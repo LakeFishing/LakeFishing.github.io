@@ -190,7 +190,7 @@ p {
 }
 
 #page2 {
-  background-color: #2c3e50;
+  background-color: #9da9b6;
 }
 
 #page2 svg {
@@ -408,23 +408,37 @@ input[name="r1"] {
   max-width: 1000px;
 }
 
+.nature_pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .nature_pages div img {
   width: 180px;
-  height: 180px;
+  height: 540px;
   border-radius: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .nature_pages_1 {
   position: relative;
   width: 180px;
-  height: 180px;
+  height: 540px;
   border-radius: 90px;
+  margin: 20px;
 }
 
 .layer {
   position: absolute;
   width: 180px;
-  height: 180px;
+  height: 540px;
   border-radius: 90px;
   top: 0;
   left: 0;
@@ -441,6 +455,7 @@ input[name="r1"] {
   position: absolute;
   color: white;
   font-size: 28px;
+  white-space: nowrap;
   opacity: 0;
   top: 50%;
   left: 50%;
@@ -465,7 +480,24 @@ input[name="r1"] {
   }
 }
 
-@media (max-width: 960px) {
+/*----------ipad寬度----------*/
+@media (max-width: 1024px) {
+  .structure_pages_1 {
+    -ms-flex-preferred-size: 250px;
+        flex-basis: 250px;
+  }
+  .structure_pages_2 {
+    -ms-flex-preferred-size: 385px;
+        flex-basis: 385px;
+  }
+  .structure_pages_3 {
+    -ms-flex-preferred-size: 790px;
+        flex-basis: 790px;
+  }
+}
+
+/*----------mobile寬度----------*/
+@media (max-width: 992px) {
   .sideBar {
     height: 50px;
     width: 50px;
@@ -511,6 +543,9 @@ input[name="r1"] {
   }
   #page4 {
     height: 1500px;
+  }
+  #page5 {
+    height: 2600px;
   }
   /*----------頁長度----------*/
   /*----------歷史故事----------*/
@@ -587,8 +622,16 @@ input[name="r1"] {
             align-items: center;
   }
   .structure_pages_1 {
-    -ms-flex-preferred-size: 400px;
-        flex-basis: 400px;
+    -ms-flex-preferred-size: 500px;
+        flex-basis: 500px;
+  }
+  .structure_pages_2 {
+    -ms-flex-preferred-size: 500px;
+        flex-basis: 500px;
+  }
+  .structure_pages_3 {
+    -ms-flex-preferred-size: 500px;
+        flex-basis: 500px;
   }
   /*----------建築特色----------*/
 }
