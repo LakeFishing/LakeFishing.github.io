@@ -181,7 +181,7 @@ p {
   background-size: cover;
 }
 
-#page1 svg, object {
+#page1 svg {
   width: 800px;
 }
 
