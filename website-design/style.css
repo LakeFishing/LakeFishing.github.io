@@ -9,6 +9,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-weight: 500;
   font-size: 36px;
@@ -451,21 +455,29 @@ input[name="r1"] {
   background: rgba(231, 76, 60, 0.6);
 }
 
-.layer h2 {
-  position: absolute;
+.layer * {
+  position: relative;
   color: white;
-  font-size: 28px;
-  white-space: nowrap;
   opacity: 0;
-  top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  padding: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.layer:hover h2 {
+.layer h2 {
+  font-size: 28px;
+  white-space: nowrap;
+  top: 10%;
+}
+
+.layer P {
+  top: 15%;
+}
+
+.layer:hover * {
   left: 50%;
   opacity: 1;
 }
@@ -493,6 +505,9 @@ input[name="r1"] {
   .structure_pages_3 {
     -ms-flex-preferred-size: 790px;
         flex-basis: 790px;
+  }
+  #page5 {
+    height: 1400px;
   }
 }
 
