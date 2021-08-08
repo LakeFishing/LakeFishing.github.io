@@ -3,6 +3,7 @@
 $sideBarActiveWidth: 170px;
 $mainColor: #e74c3c;
 $history_pages_height: 360px;
+$history_pages_width: 800px;
 
 *{
     margin: 0;
@@ -124,6 +125,10 @@ p{
     border-radius: 12px;
     line-height: 50px;
 }
+.sideBar ul li .current{
+    background-color: white;
+    color: $mainColor;
+}
 .content{
     position: absolute;
     height: 100%;
@@ -139,12 +144,14 @@ p{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    // justify-content:space-around;
+    justify-content:center;
     align-items: center;
-    padding: 0px 20px;
+    padding: 50px 20px;
 }
 #page1{
-    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images\\image0.jpg");
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(0, 0, 0, 0.7)),url("images\\image0.jpg");
+    // background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images\\image0.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -187,21 +194,22 @@ section div h3::after{
 
 /*----------歷史故事----------*/
 #page3{
-    background-color: #95a5a6;
+    // background-color: #95a5a6;
+    background-color: white;
 }
-#page3 div{
-    max-width: 800px;
-}
+// #page3 div{
+//     max-width: 800px;
+// }
 .history_pages{
     background-color: white;
-    width: 800px;
+    width: $history_pages_width;
     height: $history_pages_height;
     overflow: hidden;
     display: flex;
     box-shadow: 5px 5px 10px 1px #777;
 }
 .history_pages div{
-    width: 800px;
+    width: $history_pages_width;
     background-color: white;
     height: $history_pages_height;
     display: flex;
@@ -212,6 +220,9 @@ section div h3::after{
     text-align: left;
     margin: 0px 64px;
     text-indent: 2em;
+}
+.history_pages p::first-letter{
+    font-size: 40px;
 }
 .history_pages .images{
     height: $history_pages_height;
@@ -224,6 +235,9 @@ input[name="r1"]{
     position: absolute;
     visibility: hidden;
 }
+.change_page_block{
+    height: 40px;
+}
 .change_page{
     position: absolute;
     display: flex;
@@ -232,31 +246,41 @@ input[name="r1"]{
     transform: translateX(-50%);
 }
 .change_page .r1_btn{
-    width: 56px;
-    height: 16px;
-    border: 3px solid white;
+    height: fit-content;
     margin: 10px;
     cursor: pointer;
     transition: 0.2s;
-    box-shadow: 3px 3px 8px 1px #777;
+    color: #95a5a6;
+    padding: 5px;
+    border: 2px solid transparent;
 }
 #r1-1:checked ~ #history_pages_1{
     margin-left: 0px;
 }
 #r1-2:checked ~ #history_pages_1{
-    margin-left: -800px;
+    margin-left: 0 - ($history_pages_width * 1);
 }
 #r1-3:checked ~ #history_pages_1{
-    margin-left: -1600px;
+    margin-left: 0 - ($history_pages_width * 2);
 }
 #r1-4:checked ~ #history_pages_1{
-    margin-left: -2400px;
+    margin-left: 0 - ($history_pages_width * 3);
 }
 .r1_btn:hover{
-    background-color: white;
+    color: rgba(#5b6b6d, 1);
 }
-.selected{
-    background-color: white;
+.change_page .selected{
+    border-bottom: 2px solid #95a5a6;
+}
+.selected:hover{
+    border-bottom: 2px solid rgba(#5b6b6d, 1);
+}
+.color{
+    position: absolute;
+    transform: translateY(32px);
+    width: 100%;
+    height: $history_pages_height + 15px;
+    background-color: #95a5a6;
 }
 
 /*----------歷史故事----------*/
@@ -288,7 +312,7 @@ input[name="r1"]{
     padding: 20px 20px;
     margin: 10px;
     color: black;
-    transition: transform .2s ease;
+    transition: all .2s ease;
     cursor: pointer;
 }
 .structure_pages div:hover{
@@ -316,34 +340,39 @@ input[name="r1"]{
 /*----------紅樓生態----------*/
 
 #page5{
-    background-color: #95a5a6;
+    background-color: #eacdc2;
 }
 #page5 div{
-    max-width: 1300px;
+    max-width: 1000px;
 }
 .nature_pages{
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
+    align-items: center;
 }
-.nature_pages div img{
+.nature_pages_pic{
+    // max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nature_pages_pic div img{
     width: 180px;
-    height: 540px;
-    border-radius: 90px;
+    height: 180px;
     object-fit: cover;
 }
 .nature_pages_1{
     position: relative;
     width: 180px;
-    height: 540px;
-    border-radius: 90px;
+    height: 180px;
     margin: 10px;
+
 }
 .layer{
     position: absolute;
     width: 180px;
-    height: 540px;
-    border-radius: 90px;
+    height: 180px;
     top: 0;
     left: 0;
     cursor: pointer;
@@ -373,20 +402,26 @@ input[name="r1"]{
     left: 50%;
     opacity: 1;
 }
+.nature_pages_text{
+    flex-basis: 500px;
+}
 
 /*----------紅樓生態----------*/
 
 
-@media (max-height: 720px) {
+@media (max-height: 792px) {
     .main{
-        height: 720px;
+        height: 792px;
         width: 100%;
         background-color: white;
         position: absolute;
     }
+    .change_page{
+        bottom: 70px;
+    }
 }
 
-/*----------ipad寬度----------*/
+/*----------ipad橫版寬度----------*/
 
 @media (max-width: 1024px){
 
@@ -400,16 +435,33 @@ input[name="r1"]{
         flex-basis: 790px;
     }
     #page5{
-        height: 1400px;
+        // height: 1400px;
+        height: fit-content;
     }
-    #page5 div{
-        max-width: 700px;
+    .nature_pages_text{
+        width: 100%;
     }
 }
 
-/*----------mobile寬度----------*/
+/*----------ipad寬度----------*/
 
-@media (max-width: 992px){
+@media (max-width: 768px){
+
+    #page1{
+        height: 100%;
+    }
+    #page3{
+        height: 800px;
+    }
+    #page4{
+        height: 1300px;
+    }
+    #page5{
+        // height: 1400px;
+        height: fit-content;
+    }
+
+
     .sideBar{
         height: 50px;
         width: 50px;
@@ -445,23 +497,6 @@ input[name="r1"]{
         left: 0px;
     }
 
-/*----------頁長度----------*/
-
-    #page1{
-        height: 100%;
-    }
-    #page3{
-        height: 800px;
-    }
-    #page4{
-        height: 1500px;
-    }
-    #page5{
-        height: 3000px;
-    }
-
-/*----------頁長度----------*/
-
 /*----------歷史故事----------*/
     #page3{
         padding: 0px 40px;
@@ -488,7 +523,7 @@ input[name="r1"]{
         height: 500px;
     }
     .history_pages div p{
-        margin: 20px;
+        margin: 50px 80px;
     }
     .history_pages div .images{
         max-width: 100%;
@@ -534,4 +569,25 @@ input[name="r1"]{
     }
 
 /*----------建築特色----------*/
+}
+
+/*----------mobile寬度----------*/
+
+@media (max-width: 576px){
+
+/*----------頁長度----------*/
+    #page4{
+        height: 1500px;
+    }
+
+/*----------頁長度----------*/
+    .history_pages{
+        height: 500px;
+    }
+    .history_pages div{
+        height: 500px;
+    }
+    .history_pages div p{
+        margin: 20px;
+    }
 }

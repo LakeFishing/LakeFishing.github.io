@@ -20,37 +20,37 @@
             </div>
             <ul>
                 <li>
-                    <a href="#page1">
+                    <a href="#page1" id="page1Btn">
                         <i class="fas fa-home"></i>
                         <span>首頁</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#page2">
+                    <a href="#page2" id="page2Btn">
                         <i class="fas fa-compass"></i>
                         <span>地理位置</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#page3">
+                    <a href="#page3" id="page3Btn">
                         <i class="fas fa-book-open"></i>
                         <span>歷史故事</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#page4">
+                    <a href="#page4" id="page4Btn">
                         <i class="fas fa-igloo"></i>
                         <span>建築特色</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#page5">
+                    <a href="#page5" id="page5Btn">
                         <i class="fas fa-leaf"></i>
                         <span>紅樓生態</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#page6">
+                    <a href="#page6" id="page6Btn">
                         <i class="fas fa-user-friends"></i>
                         <span>團隊介紹</span>
                     </a>
@@ -113,7 +113,7 @@
                     <h3>地址：</h3>
                     <h3>交通資訊：</h3>
                 </div>
-                <svg id="tainan" data-name="tainan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1439.09 1294.47">
+                <svg id="tainan" data-name="tainan" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1439.09 1294.47">
                     <g id="town">
                         <path class="cls-1"
                             d="M747.23,245.77l-4.65.57L733,239.06l-10.19-5.62-3.66,7.18,7.5,13.73-4.1,2.4-7-1.07-16.42,14.66-4.17-5.44-8.75,2.62-2.84,7.33,1.22,12.32-2.36,2.5-24.13.58-18.14-1.91-10.64.94-16.48,5-2.94,5.4L614,315.86l-1.82,5.85-9.38,15.63L592,336.79l-2.78,3.78-.68,13.4-6.38,19.82L572,376.16l-8.84-.88.06,8.12-9.88,1.53-.68,3.4-9.94,4.09-5.32.17-11.52-6.07,3.84-21.26,2.53-5.56-11.15.14-.57-18.67-9.66.1,9.41-11.68-5.52-.28-5.09-13.77,10.3-5.41,6.3,7.81,4.4,0,4.44-9L558.87,292l.07-4.38-6.18-11.22,13.16-5.3,7.51,1.07.89-14.63-4-6.91,8-5.88L566,241.43l-6.5,1,5-9.58v-8.42l9.44,2.36,3,6.42,6.29.32,4.88,4.12,5.31-7.81,9.41-2.22,8.83-9.07-7.26-9.35,10.58-1,4.67-4.32,1.67-7.13L612,192.54l2.29-8,4.11-5.59,9.71,11.62,5,.22,6-13.91-.37-8.53,6.54.08-.44,6.6-5.25,9.14.94,6.31,5.18,7.32,5.92.42,7.64-5.19,5.47,0,1.5,5.82,20.65.78,0,9.31,5.56.77,2.85-9.1,11,12.66,1.65-3.54,9.4.39-.51,11.57,28.28-4.6-1,6.25,4.92,9.48Z"
@@ -230,7 +230,9 @@
                 </svg>
             </section>
             <section id="page3">
+                <div class="color"></div>
                 <div>
+                    <!-- <div class="color"></div> -->
                     <h1>歷史故事</h1>
                     <h3>紅樓的由來與修繕紀錄</h3>
                     <div class="history_pages" data-aos="fade-right">
@@ -240,8 +242,7 @@
                         <input type="radio" name="r1" id="r1-4">
                         <div id="history_pages_1">
                             <p data-aos="fade-right">
-                                建於1922年，為原臺南師範學校的本館，由當時臺南州土木課營繕係所設計的清水紅磚造三層建築，慣稱為「紅樓」。<br>
-                                歷經二次大戰波及，被盟軍燒夷彈焚毀屋架及門窗，造成空前慘重的損毀，屋頂全毀、校區成了斷垣殘壁。
+                                建於1922年，為原臺南師範學校的本館，由當時臺南州土木課營繕係所所設計的清水紅磚造三層建築，後慣稱為「紅樓」。歷經二次大戰波及，被盟軍燒夷彈焚毀屋架及門窗，造成空前慘重的損毀，屋頂全毀、校區成了斷垣殘壁。
                             </p>
                             <div class="images" data-aos="fade-left" data-aos-delay="200">
                                 <img src="images\image1.png" alt="">
@@ -256,43 +257,44 @@
                         </div>
                     </div>
                     <div class="change_page">
-                        <label for="r1-1" class="r1_btn selected" id="r1-1_btn"></label>
-                        <label for="r1-2" class="r1_btn" id="r1-2_btn"></label>
-                        <label for="r1-3" class="r1_btn" id="r1-3_btn"></label>
-                        <label for="r1-4" class="r1_btn" id="r1-4_btn"></label>
+                        <label for="r1-1" class="r1_btn selected" id="r1-1_btn">01</label>
+                        <label for="r1-2" class="r1_btn" id="r1-2_btn">02</label>
+                        <label for="r1-3" class="r1_btn" id="r1-3_btn">03</label>
+                        <label for="r1-4" class="r1_btn" id="r1-4_btn">04</label>
                     </div>
+                    <div class="change_page_block"></div>
                 </div>
             </section>
             <section id="page4">
                 <div>
                     <h1>建築特色</h1>
                     <h3>歲月與時代的雕刻</h3>
-                    <div class="structure_pages">
-                        <div class="structure_pages_1" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="structure_pages" data-aos="zoom-out">
+                        <div class="structure_pages_1">
                             <h2>建材</h2>
                             <p>紅磚及黑瓦</p>
                         </div>
-                        <div class="structure_pages_1" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="structure_pages_1">
                             <h2>文化資產登錄類別</h2>
                             <p>日治建築</p>
                         </div>
-                        <div class="structure_pages_1" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="structure_pages_1">
                             <h2>文化資產登錄等級</h2>
                             <p>直轄市定古蹟</p>
                         </div>
-                        <div class="structure_pages_3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="structure_pages_3">
                             <h2>結構與裝飾</h2>
                             <p>紅樓的空間接近雙十形，形成類似門廊的空間。北面兩短翼及中央突出部分有應用垂直線條做裝飾，並在屋簷下以一條白色橫飾帶環繞之。</p>
                         </div>
-                        <div class="structure_pages_3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="structure_pages_3">
                             <h2>戰爭的痕跡</h2>
                             <p>經過1945年的美軍大空襲後，當時的紅樓屋頂近乎全毀。而在戰後重新修復時便刻意保留下一整片彈孔牆，以作為當時戰爭的見證。</p>
                         </div>
-                        <div class="structure_pages_2" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="structure_pages_2">
                             <h2>面積</h2>
                             <p>總樓地板面積共3815.22平方公尺</p>
                         </div>
-                        <div class="structure_pages_2" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="structure_pages_2">
                             <h2>介紹牌</h2>
                             <p>牆下右側佇著關於紅樓的介紹牌</p>
                         </div>
@@ -304,36 +306,56 @@
                     <h1>紅樓生態</h1>
                     <h3>鳥語花香，滿園春色</h3>
                     <div class="nature_pages">
-                        <div class="nature_pages_1" data-aos="fade-down">
-                            <img src="images/black.jpg">
-                            <div class="layer">
-                                <h2>黑板樹</h2>
-                                <p>生長快速、高大挺拔、樹形優美；種植、移植都極易成活，對空氣污染抵抗力強，成為庭園、行道樹速成樹種的絕佳選擇。</p>
+                        <div class="nature_pages_pic">
+                            <div class="nature_pages_1" data-aos="fade-down">
+                                <img src="images/black.jpg">
+                                <div class="layer">
+                                    <h2>黑板樹</h2>
+                                </div>
+                            </div>
+                            <div class="nature_pages_1" data-aos="fade-up">
+                                <img src="images/mian.jpg">
+                                <div class="layer">
+                                    <h2>木棉</h2>
+                                </div>
                             </div>
                         </div>
-                        <div class="nature_pages_1" data-aos="fade-up">
-                            <img src="images/mian.jpg">
-                            <div class="layer">
-                                <h2>木棉</h2>
+                        <div class="nature_pages_text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, sit officia quasi maiores cumque deserunt debitis sequi voluptatum</p>
+                        </div>
+                        <div class="nature_pages_pic">
+                            <div class="nature_pages_1" data-aos="fade-down">
+                                <img src="images/lan.JPG">
+                                <div class="layer">
+                                    <h2>小葉欖仁</h2>
+                                </div>
+                            </div>
+                            <div class="nature_pages_1" data-aos="fade-up">
+                                <img src="images/wang.jpg">
+                                <div class="layer">
+                                    <h2>大王椰子</h2>
+                                </div>
                             </div>
                         </div>
-                        <div class="nature_pages_1" data-aos="fade-down">
-                            <img src="images/lan.JPG">
-                            <div class="layer">
-                                <h2>小葉欖仁</h2>
+                        <div class="nature_pages_text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, sit officia quasi maiores cumque deserunt debitis sequi voluptatum</p>
+                        </div>
+                        <div class="nature_pages_pic">
+                            <div class="nature_pages_1" data-aos="fade-up">
+                                <img src="images/bird.jpg">
+                                <div class="layer">
+                                    <h2>黑冠麻鷺</h2>
+                                </div>
+                            </div>
+                            <div class="nature_pages_1" data-aos="fade-up">
+                                <img src="images/bird.jpg">
+                                <div class="layer">
+                                    <h2>黑冠麻鷺</h2>
+                                </div>
                             </div>
                         </div>
-                        <div class="nature_pages_1" data-aos="fade-up">
-                            <img src="images/wang.jpg">
-                            <div class="layer">
-                                <h2>大王椰子</h2>
-                            </div>
-                        </div>
-                        <div class="nature_pages_1" data-aos="fade-up">
-                            <img src="images/bird.jpg">
-                            <div class="layer">
-                                <h2>黑冠麻鷺</h2>
-                            </div>
+                        <div class="nature_pages_text">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, sit officia quasi maiores cumque deserunt debitis sequi voluptatum</p>
                         </div>
                     </div>
                 </div>
