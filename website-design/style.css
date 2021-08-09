@@ -38,7 +38,7 @@ p {
 .main {
   height: 100vh;
   width: 100%;
-  background-color: white;
+  background-color: #ffffff;
   position: relative;
 }
 
@@ -48,7 +48,7 @@ p {
   left: 0;
   height: 100%;
   width: 78px;
-  background-color: #e74c3c;
+  background-color: #9e2a2b;
   padding: 6px 14px;
   z-index: 99;
   -webkit-transition: all 0.3s ease;
@@ -68,7 +68,7 @@ p {
 
 .sideBar #btn {
   position: absolute;
-  color: white;
+  color: #ffffff;
   top: 6px;
   left: 50%;
   height: 50px;
@@ -101,7 +101,7 @@ p {
 }
 
 .sideBar ul li a {
-  color: white;
+  color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,8 +116,8 @@ p {
 }
 
 .sideBar ul li a:hover {
-  background-color: white;
-  color: #e74c3c;
+  background-color: #ffffff;
+  color: #9e2a2b;
 }
 
 .sideBar ul li a i {
@@ -153,8 +153,8 @@ p {
 }
 
 .sideBar ul li .current {
-  background-color: white;
-  color: #e74c3c;
+  background-color: #ffffff;
+  color: #9e2a2b;
 }
 
 .content {
@@ -169,7 +169,9 @@ p {
 
 .content section {
   position: relative;
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,11 +186,26 @@ p {
   padding: 50px 20px;
 }
 
+section div {
+  text-align: center;
+}
+
+section div h3::after {
+  content: " ";
+  max-width: 200px;
+  height: 1px;
+  background: black;
+  display: block;
+  margin: 10px auto 15px auto;
+}
+
+/*----------首頁----------*/
 #page1 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(4, 9, 30, 0.5)), to(rgba(0, 0, 0, 0.7))), url("images\\image0.jpg");
   background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(0, 0, 0, 0.7)), url("images\\image0.jpg");
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
 
 #page1 svg {
@@ -196,9 +213,11 @@ p {
 }
 
 #page1 .cls-1 {
-  fill: white;
+  fill: #ffffff;
 }
 
+/*----------首頁----------*/
+/*----------地理位置----------*/
 #page2 {
   background-color: #9da9b6;
 }
@@ -217,48 +236,36 @@ p {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  color: white;
+  color: #ffffff;
 }
 
 #page2 .cls-1 {
-  fill: white;
+  fill: #ffffff;
   stroke: black;
   stroke-width: 2px;
 }
 
-section div {
-  text-align: center;
-}
-
-section div h3::after {
-  content: " ";
-  max-width: 200px;
-  height: 1px;
-  background: black;
-  display: block;
-  margin: 10px auto 15px auto;
-}
-
+/*----------地理位置----------*/
 /*----------歷史故事----------*/
 #page3 {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .history_pages {
-  background-color: white;
+  background-color: #ffffff;
   width: 800px;
   height: 360px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 5px 5px 10px 1px #777;
-          box-shadow: 5px 5px 10px 1px #777;
+  -webkit-box-shadow: 5px 5px 10px 1px #7e6112;
+          box-shadow: 5px 5px 10px 1px #7e6112;
 }
 
 .history_pages div {
   width: 800px;
-  background-color: white;
+  background-color: #ffffff;
   height: 360px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,7 +302,7 @@ input[name="r1"] {
 }
 
 .change_page_block {
-  height: 40px;
+  height: 105px;
 }
 
 .change_page {
@@ -317,7 +324,7 @@ input[name="r1"] {
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  color: #95a5a6;
+  color: #e09f3e;
   padding: 5px;
   border: 2px solid transparent;
 }
@@ -339,24 +346,24 @@ input[name="r1"] {
 }
 
 .r1_btn:hover {
-  color: #5b6b6d;
+  color: rgba(224, 159, 62, 0.7);
 }
 
 .change_page .selected {
-  border-bottom: 2px solid #95a5a6;
+  border-bottom: 2px solid #e09f3e;
 }
 
 .selected:hover {
-  border-bottom: 2px solid #5b6b6d;
+  border-bottom: 2px solid rgba(224, 159, 62, 0.7);
 }
 
-.color {
+#page3 .color {
   position: absolute;
-  -webkit-transform: translateY(32px);
-          transform: translateY(32px);
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
   width: 100%;
   height: 375px;
-  background-color: #95a5a6;
+  background-color: #e09f3e;
 }
 
 /*----------歷史故事----------*/
@@ -376,11 +383,11 @@ input[name="r1"] {
 }
 
 #page4 div h1, #page4 div h3 {
-  color: white;
+  color: #ffffff;
 }
 
 #page4 div h3::after {
-  background: white;
+  background: #ffffff;
 }
 
 .structure_pages {
@@ -395,7 +402,7 @@ input[name="r1"] {
 }
 
 .structure_pages div {
-  background-color: white;
+  background-color: #ffffff;
   padding: 20px 20px;
   margin: 10px;
   color: black;
@@ -427,7 +434,8 @@ input[name="r1"] {
 /*----------建築特色----------*/
 /*----------紅樓生態----------*/
 #page5 {
-  background-color: #eacdc2;
+  background-color: #ffffff;
+  overflow: hidden;
 }
 
 #page5 div {
@@ -449,6 +457,8 @@ input[name="r1"] {
 }
 
 .nature_pages_pic {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -457,6 +467,9 @@ input[name="r1"] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nature_pages_pic div img {
@@ -464,6 +477,9 @@ input[name="r1"] {
   height: 180px;
   -o-object-fit: cover;
      object-fit: cover;
+  padding: 5px;
+  background-color: #fff3b0;
+  background-color: #335c67;
 }
 
 .nature_pages_1 {
@@ -471,6 +487,7 @@ input[name="r1"] {
   width: 180px;
   height: 180px;
   margin: 10px;
+  z-index: 10;
 }
 
 .layer {
@@ -485,47 +502,121 @@ input[name="r1"] {
 }
 
 .layer:hover {
-  background: rgba(231, 76, 60, 0.6);
-}
-
-.layer * {
-  position: relative;
-  color: white;
-  opacity: 0;
-  left: 50%;
-  padding: 10px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  background: rgba(51, 92, 103, 0.8);
+  color: #ffffff;
 }
 
 .layer h2 {
+  position: relative;
+  color: #ffffff;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  padding: 10px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   font-size: 28px;
   white-space: nowrap;
-  top: 10%;
 }
 
-.layer P {
-  top: 15%;
-}
-
-.layer:hover * {
-  left: 50%;
+.layer:hover h2 {
   opacity: 1;
 }
 
 .nature_pages_text {
-  -ms-flex-preferred-size: 500px;
-      flex-basis: 500px;
+  padding: 20px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 5px solid #335c67;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+#page5 .branch_1 {
+  position: absolute;
+  width: 500px;
+  top: 10%;
+  left: 0%;
+  z-index: 0;
+  fill: #335c67;
+}
+
+#page5 .branch_2 {
+  position: absolute;
+  width: 500px;
+  top: 60%;
+  right: 0%;
+  z-index: 0;
+  fill: #335c67;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+#page5 .branch_3 {
+  position: absolute;
+  width: 500px;
+  top: 0%;
+  left: 60%;
+  z-index: 0;
+  fill: #335c67;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
 }
 
 /*----------紅樓生態----------*/
+/*----------團隊介紹----------*/
+.team_pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team_pages_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #540b0e;
+  text-align: left;
+}
+
+.team_pages_1 * {
+  margin: 10px;
+}
+
+.team_pages_1 p {
+  background-color: #ffffff;
+  color: #540b0e;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/*----------團隊介紹----------*/
 @media (max-height: 792px) {
   .main {
     height: 792px;
     width: 100%;
-    background-color: white;
+    background-color: #ffffff;
     position: absolute;
   }
   .change_page {
@@ -535,6 +626,7 @@ input[name="r1"] {
 
 /*----------ipad橫版寬度----------*/
 @media (max-width: 1024px) {
+  /*----------建築特色----------*/
   .structure_pages_1 {
     -ms-flex-preferred-size: 250px;
         flex-basis: 250px;
@@ -547,68 +639,7 @@ input[name="r1"] {
     -ms-flex-preferred-size: 790px;
         flex-basis: 790px;
   }
-  #page5 {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-  .nature_pages_text {
-    width: 100%;
-  }
-}
-
-/*----------ipad寬度----------*/
-@media (max-width: 768px) {
-  #page1 {
-    height: 100%;
-  }
-  #page3 {
-    height: 800px;
-  }
-  #page4 {
-    height: 1300px;
-  }
-  #page5 {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-  .sideBar {
-    height: 50px;
-    width: 50px;
-    padding: 0px;
-    top: 5px;
-    left: 5px;
-    border-radius: 25px;
-  }
-  .sideBar #btn {
-    top: 0px;
-  }
-  .sideBar.active {
-    height: 100%;
-    border-radius: 0px;
-    padding: 6px 14px;
-    top: 0px;
-    left: 0px;
-  }
-  .sideBar ul {
-    display: none;
-  }
-  .sideBar.active #btn {
-    top: 6px;
-  }
-  .sideBar.active ul {
-    display: block;
-  }
-  .sideBar.active ul li a {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .content {
-    width: 100%;
-    left: 0px;
-  }
+  /*----------建築特色----------*/
   /*----------歷史故事----------*/
   #page3 {
     padding: 0px 40px;
@@ -635,6 +666,8 @@ input[name="r1"] {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 500px;
+    -webkit-box-shadow: 2px 2px 10px 1px #777;
+            box-shadow: 2px 2px 10px 1px #777;
   }
   .history_pages div {
     display: -webkit-box;
@@ -675,6 +708,58 @@ input[name="r1"] {
     margin-top: -1500px;
   }
   /*----------歷史故事----------*/
+  /*----------紅樓生態----------*/
+  .nature_pages_pic {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .nature_pages_text {
+    margin-top: 20px;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    width: 100%;
+  }
+  /*----------紅樓生態----------*/
+}
+
+/*----------ipad寬度----------*/
+@media (max-width: 768px) {
+  .sideBar {
+    height: 50px;
+    width: 50px;
+    padding: 0px;
+    top: 5px;
+    left: 5px;
+    border-radius: 25px;
+  }
+  .sideBar #btn {
+    top: 0px;
+  }
+  .sideBar.active {
+    height: 100%;
+    border-radius: 0px;
+    padding: 6px 14px;
+    top: 0px;
+    left: 0px;
+  }
+  .sideBar ul {
+    display: none;
+  }
+  .sideBar.active #btn {
+    top: 6px;
+  }
+  .sideBar.active ul {
+    display: block;
+  }
+  .sideBar.active ul li a {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .content {
+    width: 100%;
+    left: 0px;
+  }
   /*----------建築特色----------*/
   #page4 div {
     max-width: 100%;
@@ -699,11 +784,7 @@ input[name="r1"] {
 
 /*----------mobile寬度----------*/
 @media (max-width: 576px) {
-  /*----------頁長度----------*/
-  #page4 {
-    height: 1500px;
-  }
-  /*----------頁長度----------*/
+  /*----------歷史故事----------*/
   .history_pages {
     height: 500px;
   }
@@ -713,5 +794,23 @@ input[name="r1"] {
   .history_pages div p {
     margin: 20px;
   }
+  /*----------歷史故事----------*/
+  /*----------紅樓生態----------*/
+  .nature_pages_1 {
+    width: 120px;
+    height: 120px;
+  }
+  .nature_pages .nature_pages_1 img {
+    width: 120px;
+    height: 120px;
+  }
+  .nature_pages .nature_pages_1 .layer {
+    width: 120px;
+    height: 120px;
+  }
+  .nature_pages_1 div h2 {
+    font-size: 20px;
+  }
+  /*----------紅樓生態----------*/
 }
 /*# sourceMappingURL=style.css.map */
