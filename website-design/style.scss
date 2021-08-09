@@ -351,17 +351,21 @@ input[name="r1"]{
 /*----------紅樓生態----------*/
 
 #page5{
-    background-color: $white;
-    overflow: hidden;
+    // background-color: $white;
+    background-color: rgba($deepSpaceSparkle, 0.3);
+    background-image: url("images/01.svg");
+    background-position: right;
+    background-size: cover;
 }
 #page5 div{
     max-width: 1000px;
+    z-index: 10;
 }
 .nature_pages{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 .nature_pages_pic{
     // width: 500px;
@@ -376,7 +380,6 @@ input[name="r1"]{
     height: 180px;
     object-fit: cover;
     padding: 5px;
-    background-color: $mediumChampagne;
     background-color: $deepSpaceSparkle;
 }
 .nature_pages_1{
@@ -415,68 +418,40 @@ input[name="r1"]{
     opacity: 1;
 }
 .nature_pages_text{
-    // background-color: $deepSpaceSparkle;
     padding: 20px;
-    flex-basis: 50%;
-    // color: white;
+    margin: 10px;
+    flex-basis: 40%;
     align-items: center;
-    border: 5px solid $deepSpaceSparkle;
-    background-color: $white;
+    border: 10px double $deepSpaceSparkle;
+    // background-color: $white;
+    color: $deepSpaceSparkle;
     z-index: 10;
-}
-#page5 .branch_1{
-    position: absolute;
-    width: 500px;
-    top: 10%;
-    left: 0%;
-    z-index: 0;
-    fill: $deepSpaceSparkle;
-}
-#page5 .branch_2{
-    position: absolute;
-    width: 500px;
-    top: 60%;
-    right: 0%;
-    z-index: 0;
-    fill: $deepSpaceSparkle;
-    transform: rotateY(180deg);
-}
-#page5 .branch_3{
-    position: absolute;
-    width: 500px;
-    top: 0%;
-    left: 60%;
-    z-index: 0;
-    fill: $deepSpaceSparkle;
-    transform: rotateX(180deg);
 }
 
 /*----------紅樓生態----------*/
 
 /*----------團隊介紹----------*/
 .team_pages{
-    display: flex;
-    flex-wrap: wrap;
-    // flex-basis: 1000px;
-    justify-content: center;
+    max-width: 1000px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
 }
 .team_pages_1{
     display: flex;
-    flex-basis: 400px;
-    flex-direction: column;
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
     border-radius: 20px;
     color: $white;
-    background-color: $rosewood;
-    text-align: left;
+    background-color: $indianYellow;
+    align-items: center;
 }
 .team_pages_1 *{
     margin: 10px;
 }
 .team_pages_1 p{
     background-color: $white;
-    color: $rosewood;
+    color: black;
     border-radius: 20px;
     padding: 20px;
     text-align: center;
@@ -514,15 +489,13 @@ input[name="r1"]{
 /*----------建築特色----------*/
 
 /*----------歷史故事----------*/
-    #page3{
-        padding: 0px 40px;
-    }
+
     #page3 div{
         width: 100%;
     }
     #page3 div .change_page{
         height: fit-content;
-        bottom: 30px;
+        bottom: 80px;
         justify-content: center;
     }
     .history_pages{
@@ -573,8 +546,7 @@ input[name="r1"]{
     }
     .nature_pages_text{
         margin-top: 20px;
-        flex-basis: 80%;
-        width: 100%;
+        flex-basis: 100%;
     }
 
 /*----------紅樓生態----------*/
@@ -637,6 +609,10 @@ input[name="r1"]{
     }
 
 /*----------建築特色----------*/
+
+    .team_pages_1{
+        flex-direction: column;
+    }
 }
 
 /*----------mobile寬度----------*/
