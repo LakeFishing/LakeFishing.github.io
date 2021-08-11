@@ -183,7 +183,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 50px 20px;
+  padding: 80px 20px;
 }
 
 section div {
@@ -277,14 +277,26 @@ section div h3::after {
   transition: 1s;
 }
 
+#history_pages_01 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.history_pages h2 {
+  margin: 10px 64px;
+}
+
 .history_pages p {
   text-align: left;
   margin: 0px 64px;
-  text-indent: 2em;
-}
-
-.history_pages p::first-letter {
-  font-size: 40px;
 }
 
 .history_pages .images {
@@ -343,6 +355,10 @@ input[name="r1"] {
 
 #r1-4:checked ~ #history_pages_1 {
   margin-left: -2400px;
+}
+
+#r1-5:checked ~ #history_pages_1 {
+  margin-left: -3200px;
 }
 
 .r1_btn:hover {
@@ -441,7 +457,7 @@ input[name="r1"] {
 }
 
 #page5 div {
-  max-width: 1000px;
+  max-width: 100%;
   z-index: 10;
 }
 
@@ -454,9 +470,9 @@ input[name="r1"] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nature_pages_pic {
@@ -476,8 +492,8 @@ input[name="r1"] {
 }
 
 .nature_pages_pic div img {
-  width: 180px;
-  height: 180px;
+  width: 240px;
+  height: 240px;
   -o-object-fit: cover;
      object-fit: cover;
   padding: 5px;
@@ -486,16 +502,16 @@ input[name="r1"] {
 
 .nature_pages_1 {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 240px;
+  height: 240px;
   margin: 10px;
   z-index: 10;
 }
 
 .layer {
   position: absolute;
-  width: 180px;
-  height: 180px;
+  width: 240px;
+  height: 240px;
   top: 0;
   left: 0;
   cursor: pointer;
@@ -535,6 +551,7 @@ input[name="r1"] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: left;
   border: 10px double #335c67;
   color: #335c67;
   z-index: 10;
@@ -543,7 +560,14 @@ input[name="r1"] {
 /*----------紅樓生態----------*/
 /*----------團隊介紹----------*/
 .team_pages {
-  max-width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .team_pages_1 {
@@ -552,24 +576,58 @@ input[name="r1"] {
   display: flex;
   padding: 10px;
   margin: 20px;
-  border-radius: 20px;
-  color: #ffffff;
-  background-color: #e09f3e;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 500px;
+      flex-basis: 500px;
+  color: #540b0e;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-shadow: 5px 5px 10px 1px #777;
+          box-shadow: 5px 5px 10px 1px #777;
+}
+
+.team_pages_1 div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .team_pages_1 * {
-  margin: 10px;
+  margin: 5px;
 }
 
 .team_pages_1 p {
-  background-color: #ffffff;
   color: black;
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
+  text-align: left;
+}
+
+.team_pages_1 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /*----------團隊介紹----------*/
@@ -638,7 +696,7 @@ input[name="r1"] {
     height: 500px;
   }
   .history_pages div p {
-    margin: 50px 80px;
+    margin: 0px 80px;
   }
   .history_pages div .images {
     max-width: 100%;
@@ -665,16 +723,20 @@ input[name="r1"] {
     margin-left: 0px;
     margin-top: -1500px;
   }
+  #r1-5:checked ~ #history_pages_1 {
+    margin-left: 0px;
+    margin-top: -2000px;
+  }
   /*----------歷史故事----------*/
   /*----------紅樓生態----------*/
   .nature_pages_pic {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
   }
   .nature_pages_text {
     margin-top: 20px;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
   }
   /*----------紅樓生態----------*/
 }
@@ -759,6 +821,14 @@ input[name="r1"] {
   }
   /*----------歷史故事----------*/
   /*----------紅樓生態----------*/
+  .nature_pages_pic {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .nature_pages_text {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
   .nature_pages_1 {
     width: 120px;
     height: 120px;
