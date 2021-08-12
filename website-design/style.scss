@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500&display=swap');
 
-$sideBarActiveWidth: 170px;
-// $mainColor: #e74c3c;
+$side-active-width: 170px;
 $mainColor: #9e2a2b;
 $deepSpaceSparkle: #335c67;
 $mediumChampagne: #fff3b0;
 $indianYellow: #e09f3e;
 $rosewood: #540b0e;
 $white: #ffffff;
-$history_pages_height: 360px;
-$history_pages_width: 800px;
+$history-content-height: 360px;
+$history-content-width: 800px;
 
 *{
     margin: 0;
@@ -45,7 +44,7 @@ p{
     background-color: $white;
     position: relative;
 }
-.sideBar{
+.side{
     position: fixed;
     top: 0;
     left: 0;
@@ -56,14 +55,14 @@ p{
     z-index: 99;
     transition: all 0.3s ease;
 }
-.sideBar.active{
-    width: $sideBarActiveWidth;
+.side.active{
+    width: $side-active-width;
 }
-.sideBar .sideBarBtn{
+.side .side-btn{
     display: flex;
     height: 50px;
 }
-.sideBar #btn{
+.side #btn{
     position: absolute;
     color: $white;
     top: 6px;
@@ -77,13 +76,13 @@ p{
     transition: all 0.5s ease;
     cursor: pointer;
 }
-.sideBar.active #btn{
+.side.active #btn{
     left: 85%;
 }
-.sideBar ul{
+.side ul{
     margin-top: 20px;
 }
-.sideBar ul li{
+.side ul li{
     position: relative;
     height: 50px;
     width: 100%;
@@ -91,7 +90,7 @@ p{
     line-height: 50px;
     margin: 40px 0;
 }
-.sideBar ul li a{
+.side ul li a{
     color: $white;
     display: flex;
     align-items: center;
@@ -100,11 +99,11 @@ p{
     white-space: nowrap;
     transition: all 0.5s ease;
 }
-.sideBar ul li a:hover{
+.side ul li a:hover{
     background-color: $white;
     color: $mainColor;
 }
-.sideBar ul li a i{
+.side ul li a i{
     font-size: 18px;
     height: 50px;
     min-width: 50px;
@@ -112,26 +111,26 @@ p{
     line-height: 50px;
     text-align: center;
 }
-.sideBar ul li a span{
+.side ul li a span{
     font-size: 16px;
     font-weight: 500;
     opacity: 0;
     pointer-events: none;
     letter-spacing: 2px;
 }
-.sideBar.active ul li a span{
+.side.active ul li a span{
     transition: opacity 0.5s ease;
     opacity: 1;
     pointer-events: auto;
 }
-.sideBar.active ul li a i{
+.side.active ul li a i{
     font-size: 18px;
     height: 50px;
     min-width: 50px;
     border-radius: 12px;
     line-height: 50px;
 }
-.sideBar ul li .current{
+.side ul li .current{
     background-color: $white;
     color: $mainColor;
 }
@@ -141,7 +140,6 @@ p{
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.3s ease;
-    // overflow-y: scroll;
     scroll-behavior: smooth;
 }
 .content section{
@@ -157,6 +155,9 @@ p{
 section div{
     text-align: center;
 }
+section div h1{
+    margin-bottom: 5px;
+}
 section div h3::after{
     content: " ";
     max-width: 200px;
@@ -167,100 +168,114 @@ section div h3::after{
 }
 
 /*----------首頁----------*/
-#page1{
-    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(0, 0, 0, 0.7)),url("images\\image0.jpg");
-    // background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images\\image0.jpg");
+#home{
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(0, 0, 0, 0.7)),url("images//image0.jpg");
     background-position: center;
     background-size: cover;
     height: 100%;
 }
-#page1 svg{
+#home svg{
     width: 800px;
-}
-#page1 .cls-1{
     fill: $white;
 }
 /*----------首頁----------*/
 
 /*----------地理位置----------*/
-#page2{
-    background-color: #9da9b6;
+#location{
+    background-color: $white;
 }
-#page2 svg{
-    border: 1px solid black;
-    width: 500px;
-    height:fit-content;
+.location-content{
+    background-image: linear-gradient(rgba(4,9,30,0.6),rgba(0, 0, 0, 0.6)),url("images//map.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 10px 1px #777;
 }
-#page2 div{
-    border: 1px solid black;
-    width: 480px;
-    height: fit-content;
+.location-content div{
+    width: 280px;
+    padding: 20px;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
     color: $white;
 }
-#page2 .cls-1{
-    fill: $white;
-    stroke: black;
-    stroke-width: 2px;
+.location-content div h2, .location-content div p{
+    user-select: none;
+    padding: 5px;
+}
+.location-content div a{
+    padding: 0px 10px;
+    color: $white;
+    border: 1px solid $white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.location-content div a:hover{
+    background-color: $mainColor;
+    border: 1px solid $mainColor;
+    color: $white;
 }
 /*----------地理位置----------*/
 
 /*----------歷史故事----------*/
-#page3{
+#history{
     background-color: $white;
 }
-// #page3 div{
-//     max-width: 800px;
-// }
-.history_pages{
+.history-content{
     background-color: $white;
-    width: $history_pages_width;
-    height: $history_pages_height;
+    width: $history-content-width;
+    height: $history-content-height;
     overflow: hidden;
     display: flex;
     box-shadow: 5px 5px 10px 1px #7e6112;
 }
-.history_pages div{
-    width: $history_pages_width;
+.history-content div{
+    width: $history-content-width;
+    height: $history-content-height;
     background-color: $white;
-    height: $history_pages_height;
     display: flex;
     align-items: center;
     transition: 1s;
 }
-#history_pages_01{
+#history-page{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.history_pages h2{
+.history-content h2{
     margin: 10px 64px;
 }
-.history_pages p{
+.history-content p{
     text-align: left;
     margin: 0px 64px;
 }
-.history_pages .images{
-    height: $history_pages_height;
+.history-image{
+    height: $history-content-height;
     overflow: hidden;
 }
-.history_pages .images img{
-    height: $history_pages_height;
+.history-image img{
+    height: $history-content-height;
 }
 input[name="r1"]{
     position: absolute;
     visibility: hidden;
 }
-.change_page_block{
+.btn-space{
     height: 105px;
 }
-.change_page{
+.history-content-btn{
     position: absolute;
     display: flex;
     left: 50%;
     bottom: 100px;
     transform: translateX(-50%);
 }
-.change_page .r1_btn{
+.history-content-btn .r1-btn{
     height: fit-content;
     margin: 10px;
     cursor: pointer;
@@ -269,63 +284,61 @@ input[name="r1"]{
     padding: 5px;
     border: 2px solid transparent;
 }
-#r1-1:checked ~ #history_pages_1{
+#r1-1:checked ~ #history-page-anchor{
     margin-left: 0px;
 }
-#r1-2:checked ~ #history_pages_1{
-    margin-left: 0 - ($history_pages_width * 1);
+#r1-2:checked ~ #history-page-anchor{
+    margin-left: 0 - ($history-content-width * 1);
 }
-#r1-3:checked ~ #history_pages_1{
-    margin-left: 0 - ($history_pages_width * 2);
+#r1-3:checked ~ #history-page-anchor{
+    margin-left: 0 - ($history-content-width * 2);
 }
-#r1-4:checked ~ #history_pages_1{
-    margin-left: 0 - ($history_pages_width * 3);
+#r1-4:checked ~ #history-page-anchor{
+    margin-left: 0 - ($history-content-width * 3);
 }
-#r1-5:checked ~ #history_pages_1{
-    margin-left: 0 - ($history_pages_width * 4);
+#r1-5:checked ~ #history-page-anchor{
+    margin-left: 0 - ($history-content-width * 4);
 }
-.r1_btn:hover{
-    // color: rgba(#5b6b6d, 1);
+.r1-btn:hover{
     color: rgba($indianYellow, 0.7);
 }
-.change_page .selected{
+.history-content-btn .selected{
     border-bottom: 2px solid $indianYellow;
 }
 .selected:hover{
     border-bottom: 2px solid rgba($indianYellow, 0.7);
 }
-#page3 .color{
+#history .color-bar{
     position: absolute;
     transform: translateY(0px);
     width: 100%;
-    height: $history_pages_height + 15px;
+    height: $history-content-height + 15px;
     background-color: $indianYellow;
 }
-
 /*----------歷史故事----------*/
 
 /*----------建築特色----------*/
-#page4{
-    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images\\image3.png");
+#structure{
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images//image3.png");
     background-position: center;
     background-size: cover;
 }
-#page4 div{
+#structure div{
     max-width: 1200px;
     align-items: flex-start;
 }
-#page4 div h1, #page4 div h3{
+#structure h1, #structure h3{
     color: $white;
 }
-#page4 div h3::after{
+#structure h3::after{
     background: $white;
 }
-.structure_pages{
+.structure-content{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
 }
-.structure_pages div{
+.structure-content div{
     background-color: $white;
     padding: 20px 20px;
     margin: 10px;
@@ -333,116 +346,106 @@ input[name="r1"]{
     transition: all .2s ease;
     cursor: pointer;
 }
-.structure_pages div:hover{
+.structure-content div:hover{
     transform: scale(1.02);
 }
-.structure_pages_1{
+.structure-content-top{
     flex-basis: 300px;
 }
-.structure_pages_2{
-    flex-basis: 400px;
-}
-.structure_pages_3{
+.structure-content-middle{
     flex-basis: 520px;
 }
-// .structure_pages_2 .images{
-//     width: 400px;
-//     flex-basis: 500px;
-//     height: 200px;
-//     overflow: hidden;
-//     margin: auto;
-// }
+.structure-content-bottom{
+    flex-basis: 400px;
+}
 
 /*----------建築特色----------*/
 
 /*----------紅樓生態----------*/
 
-#page5{
+#nature{
     background-color: rgba($deepSpaceSparkle, 0.3);
-    background-image: url("images/01.png");
+    background-image: url("images//01.png");
     background-position: right;
     background-size: cover;
 }
-#page5 div{
+#nature div{
     max-width: 100%;
     z-index: 10;
 }
-.nature_pages{
+.nature-content{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-.nature_pages_pic{
-    flex-basis: 50%;
+.nature-content-pic{
+    flex-basis: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-.nature_pages_pic div img{
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-    padding: 5px;
-    background-color: $deepSpaceSparkle;
-}
-.nature_pages_1{
+.nature-image{
     position: relative;
-    width: 240px;
-    height: 240px;
+    width: 360px;
+    height: 300px;
     margin: 10px;
-    z-index: 10;
 }
-.layer{
+.nature-image img{
+    width: 360px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    padding: 5px;
+    background-color: $white;
+    box-shadow: 5px 5px 10px 1px #777;
+}
+.nature-image div{
     position: absolute;
-    width: 240px;
-    height: 240px;
-    top: 0;
-    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 360px;
+    height: 300px;
+    top: 0px;
+    left: 0px;
     cursor: pointer;
     transition: 0.5s;
-}
-.layer:hover{
-    background: rgba($deepSpaceSparkle, 0.8);
-    color: $white;
-}
-.layer h2{
-    position:relative;
-    color: $white;
     opacity: 0;
+}
+.nature-image div *{
+    position:relative;
+    color: $deepSpaceSparkle;
     left: 50%;
-    top: 50%;
     padding: 10px;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     transition: 0.5s;
+}
+.nature-image div h2{
     font-size: 28px;
     white-space: nowrap;
 }
-.layer:hover h2{
-    opacity: 1;
+.nature-image div p{
+    padding: 0px 40px;
 }
-.nature_pages_text{
-    padding: 20px;
-    margin: 10px;
-    flex-basis: 40%;
-    align-items:center;
-    text-align: left;
-    border: 10px double $deepSpaceSparkle;
-    // background-color: $white;
-    color: $deepSpaceSparkle;
-    z-index: 10;
+.nature-image div p:nth-child(3){
+    color: $mainColor;
+}
+.nature-image .nature-active{
+    opacity: 1;
+    background-color: $white;
 }
 
 /*----------紅樓生態----------*/
 
 /*----------團隊介紹----------*/
-.team_pages{
+.team-content{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.team_pages_1{
+.team-content-card{
     display: flex;
     padding: 10px;
     margin: 20px;
@@ -453,21 +456,21 @@ input[name="r1"]{
     justify-content: left;
     box-shadow: 5px 5px 10px 1px #777;
 }
-.team_pages_1 div:first-child{
+.team-content-card div:first-child{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
 }
-.team_pages_1 *{
+.team-content-card *{
     margin: 5px;
 }
-.team_pages_1 p{
+.team-content-card p{
     color: black;
     text-align: left;
 }
-.team_pages_1 div{
+.team-content-card div{
     display: flex;
     flex-direction: column;
 }
@@ -482,7 +485,7 @@ input[name="r1"]{
         background-color: $white;
         position: absolute;
     }
-    .change_page{
+    .history-content-btn{
         bottom: 70px;
     }
 }
@@ -492,67 +495,67 @@ input[name="r1"]{
 @media (max-width: 1024px){
 
 /*----------建築特色----------*/
-    .structure_pages_1{
+    .structure-content-top{
         flex-basis: 250px;
     }
-    .structure_pages_2{
-        flex-basis: 385px;
-    }
-    .structure_pages_3{
+    .structure-content-middle{
         flex-basis: 790px;
+    }
+    .structure-content-bottom{
+        flex-basis: 385px;
     }
 /*----------建築特色----------*/
 
 /*----------歷史故事----------*/
 
-    #page3 div{
+    #history div{
         width: 100%;
     }
-    #page3 div .change_page{
+    .history-content-btn{
         height: fit-content;
         bottom: 80px;
         justify-content: center;
     }
-    .history_pages{
+    .history-content{
         width: 100%;
         display: flex;
         flex-direction: column;
         height: 500px;
         box-shadow: 2px 2px 10px 1px #777;
     }
-    .history_pages div{
+    .history-content div{
         display: flex;
         flex-direction: column;
         height: 500px;
     }
-    .history_pages div p{
+    .history-content p{
         margin: 0px 80px;
     }
-    .history_pages div .images{
+    .history-image{
         max-width: 100%;
         overflow: hidden;
     }
-    .history_pages div .images img{
+    .history-image img{
         width: 100%;
         object-fit: cover;
     }
-    #r1-1:checked ~ #history_pages_1{
+    #r1-1:checked ~ #history-page-anchor{
         margin-left: 0px;
         margin-top: 0px;
     }
-    #r1-2:checked ~ #history_pages_1{
+    #r1-2:checked ~ #history-page-anchor{
         margin-left: 0px;
         margin-top: -500px;
     }
-    #r1-3:checked ~ #history_pages_1{
+    #r1-3:checked ~ #history-page-anchor{
         margin-left: 0px;
         margin-top: -1000px;
     }
-    #r1-4:checked ~ #history_pages_1{
+    #r1-4:checked ~ #history-page-anchor{
         margin-left: 0px;
         margin-top: -1500px;
     }
-    #r1-5:checked ~ #history_pages_1{
+    #r1-5:checked ~ #history-page-anchor{
         margin-left: 0px;
         margin-top: -2000px;
     }
@@ -560,14 +563,24 @@ input[name="r1"]{
 
 /*----------紅樓生態----------*/
 
-    .nature_pages_pic{
-        flex-basis: 80%;
+    .nature-content-pic{
+        flex-basis: 100%;
     }
-    .nature_pages_text{
-        margin-top: 20px;
-        flex-basis: 80%;
+    .nature-image{
+        width: 320px;
+        height: 300px;
     }
-    
+    .nature-image img{
+        width: 100%;
+        height: 100%;
+    }
+    .nature-image div{
+        width: 100%;
+        height: 100%;
+    }
+    .nature-image div p{
+        padding: 0px 20px;
+    }
 
 /*----------紅樓生態----------*/
 }
@@ -576,7 +589,7 @@ input[name="r1"]{
 
 @media (max-width: 768px){
 
-    .sideBar{
+    .side{
         height: 50px;
         width: 50px;
         padding: 0px;
@@ -584,26 +597,26 @@ input[name="r1"]{
         left: 5px;
         border-radius: 25px;
     }
-    .sideBar #btn{
+    .side #btn{
         top: 0px;
     }
-    .sideBar.active{
+    .side.active{
         height: 100%;
         border-radius: 0px;
         padding: 6px 14px;
         top: 0px;
         left: 0px;
     }
-    .sideBar ul{
+    .side ul{
         display: none;
     }
-    .sideBar.active #btn{
+    .side.active #btn{
         top:6px
     }
-    .sideBar.active ul{
+    .side.active ul{
         display: block;
     }
-    .sideBar.active ul li a{
+    .side.active ul li a{
         justify-content: center;
     }
     .content{
@@ -613,23 +626,17 @@ input[name="r1"]{
 
 /*----------建築特色----------*/
 
-    #page4 div{
+    #structure div{
         max-width: 100%;
         align-items: center;
     }
-    .structure_pages_1{
-        flex-basis: 500px;
-    }
-    .structure_pages_2{
-        flex-basis: 500px;
-    }
-    .structure_pages_3{
+    .structure-content div{
         flex-basis: 500px;
     }
 
 /*----------建築特色----------*/
 
-    .team_pages_1{
+    .team-content-card{
         flex-direction: column;
     }
 }
@@ -639,39 +646,18 @@ input[name="r1"]{
 @media (max-width: 576px){
 
 /*----------歷史故事----------*/
-    .history_pages{
+    .history-content{
         height: 500px;
     }
-    .history_pages div{
+    .history-content div{
         height: 500px;
     }
-    .history_pages div p{
-        margin: 20px;
+    .history-content h2{
+        margin-top: 20px;
+    }
+    .history-content p{
+        margin: 0px 20px 20px 20px;
     }
 /*----------歷史故事----------*/
 
-/*----------紅樓生態----------*/
-    .nature_pages_pic{
-        flex-basis: 100%;
-    }
-    .nature_pages_text{
-        flex-basis: 100%;
-    }
-    .nature_pages_1{
-        width: 120px;
-        height: 120px;
-    }
-    .nature_pages .nature_pages_1 img{
-        width: 120px;
-        height: 120px;
-    }
-    .nature_pages .nature_pages_1 .layer{
-        width: 120px;
-        height: 120px;
-    }
-    .nature_pages_1 div h2{
-        font-size: 20px;
-    }
-
-/*----------紅樓生態----------*/
 }

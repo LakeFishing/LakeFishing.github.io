@@ -1,6 +1,5 @@
 let btn = document.querySelector("#btn");
-let sideBar = document.querySelector(".sideBar");
-
+let sideBar = document.querySelector(".side");
 btn.onclick = function(){
     sideBar.classList.toggle("active");
     if(btn.classList.contains("fa-bars")){
@@ -10,9 +9,17 @@ btn.onclick = function(){
     }
 }
 
-let r1_btn = document.getElementsByClassName("r1_btn");
-var lastClick = r1_btn[0];
+function copyAddress(id){
+  var address = document.getElementById(id);
+  address.style.userSelect = "auto";
+  window.getSelection().selectAllChildren(address);
+  document.execCommand("Copy");
+  address.style.userSelect = "none";
+}
 
+
+let r1_btn = document.getElementsByClassName("r1-btn");
+var lastClick = r1_btn[0];
 for (var i = 0; i < r1_btn.length; i++){
   r1_btn[i].onclick = function(){
     lastClick.classList.remove("selected");
@@ -21,19 +28,26 @@ for (var i = 0; i < r1_btn.length; i++){
   }
 }
 
-let page1 = document.getElementById("page1");
-let page2 = document.getElementById("page2");
-let page3 = document.getElementById("page3");
-let page4 = document.getElementById("page4");
-let page5 = document.getElementById("page5");
-let page6 = document.getElementById("page6");
+let natureImage = document.getElementsByClassName("nature-text");
+for(var i = 0; i < natureImage.length; i++){
+  natureImage[i].onclick = function(){
+    this.classList.toggle("nature-active");
+  }
+}
 
-let page1Btn = document.getElementById("page1Btn");
-let page2Btn = document.getElementById("page2Btn");
-let page3Btn = document.getElementById("page3Btn");
-let page4Btn = document.getElementById("page4Btn");
-let page5Btn = document.getElementById("page5Btn");
-let page6Btn = document.getElementById("page6Btn");
+let page1 = document.getElementById("home");
+let page2 = document.getElementById("location");
+let page3 = document.getElementById("history");
+let page4 = document.getElementById("structure");
+let page5 = document.getElementById("nature");
+let page6 = document.getElementById("team");
+
+let page1Btn = document.getElementById("home-btn");
+let page2Btn = document.getElementById("location-btn");
+let page3Btn = document.getElementById("history-btn");
+let page4Btn = document.getElementById("structure-btn");
+let page5Btn = document.getElementById("nature-btn");
+let page6Btn = document.getElementById("team-btn");
 var currentPage = page1Btn;
 
 if(document.documentElement.scrollTop + screen.height / 2 < page2.offsetTop){
