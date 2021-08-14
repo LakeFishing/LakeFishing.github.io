@@ -144,7 +144,6 @@ p{
 }
 .content section{
     position: relative;
-    // overflow: hidden;
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
@@ -157,6 +156,7 @@ section div{
 }
 section div h1{
     margin-bottom: 5px;
+    z-index: 10;
 }
 section div h3::after{
     content: " ";
@@ -169,7 +169,7 @@ section div h3::after{
 
 /*----------首頁----------*/
 #home{
-    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(0, 0, 0, 0.7)),url("images//image0.jpg");
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(0, 0, 0, 0.7)),url("images//home_page_pic.jpg");
     background-position: center;
     background-size: cover;
     height: 100%;
@@ -178,14 +178,28 @@ section div h3::after{
     width: 800px;
     fill: $white;
 }
+#home div{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    left: 50%;
+    padding: 10px;
+    transform: translateX(-50%);
+    color: $white;
+}
+#home div p{
+    font-size: 10px;
+    line-height: 24px;
+}
 /*----------首頁----------*/
 
 /*----------地理位置----------*/
 #location{
     background-color: $white;
+    overflow: hidden;
 }
 .location-content{
-    background-image: linear-gradient(rgba(4,9,30,0.6),rgba(0, 0, 0, 0.6)),url("images//map.jpg");
+    background-image: linear-gradient(rgba(4,9,30,0.6),rgba(0, 0, 0, 0.6)),url("images//location_page_pic.jpg");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -193,9 +207,10 @@ section div h3::after{
     align-items: center;
     flex-wrap: wrap;
     box-shadow: 5px 5px 10px 1px #777;
+    z-index: 10;
 }
 .location-content div{
-    width: 280px;
+    width: 250px;
     padding: 20px;
     margin: 10px 20px;
     display: flex;
@@ -207,6 +222,7 @@ section div h3::after{
 .location-content div h2, .location-content div p{
     user-select: none;
     padding: 5px;
+    z-index: 10;
 }
 .location-content div a{
     padding: 0px 10px;
@@ -214,11 +230,48 @@ section div h3::after{
     border: 1px solid $white;
     transition: 0.5s;
     cursor: pointer;
+    z-index: 10;
 }
 .location-content div a:hover{
     background-color: $mainColor;
     border: 1px solid $mainColor;
     color: $white;
+}
+#location .color-bar{
+    position: absolute;
+}
+#location .color-bar-left{
+    left: 20%;
+}
+#location .color-bar-right{
+    left: 60%;
+}
+#location .color-bar div{
+    display: flex;
+}
+#location .color-bar div span{
+    position: absolute;
+    top: 0px;
+    width: 120px;
+    height: 120px;
+    display: block;
+    border-radius: 50%;
+    transform-origin: 60px 0;
+    transform: rotate(calc(90deg * var(--i)));
+    filter: blur(80px);
+    opacity: 0.75;
+}
+#location .color-bar div span:nth-child(1){
+    background-color: #01b2fe;
+}
+#location .color-bar div span:nth-child(2){
+    background-color: #ff008c;
+}
+#location .color-bar div span:nth-child(3){
+    background-color: #ffcd00;
+}
+#location .color-bar div span:nth-child(4){
+    background-color: #00c456;
 }
 /*----------地理位置----------*/
 
@@ -319,7 +372,7 @@ input[name="r1"]{
 
 /*----------建築特色----------*/
 #structure{
-    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images//image3.png");
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("images//structure_page_pic.png");
     background-position: center;
     background-size: cover;
 }
@@ -365,7 +418,7 @@ input[name="r1"]{
 
 #nature{
     background-color: rgba($deepSpaceSparkle, 0.3);
-    background-image: url("images//01.png");
+    background-image: url("images//nature_page_pic_00.png");
     background-position: right;
     background-size: cover;
 }
@@ -440,6 +493,9 @@ input[name="r1"]{
 /*----------紅樓生態----------*/
 
 /*----------團隊介紹----------*/
+#team div:nth-child(2){
+    position: relative;
+}
 .team-content{
     display: flex;
     flex-wrap: wrap;
@@ -450,29 +506,46 @@ input[name="r1"]{
     padding: 10px;
     margin: 20px;
     flex-direction: column;
-    flex-basis: 500px;
+    flex-basis: 400px;
     color: $rosewood;
     align-items: center;
     justify-content: left;
     box-shadow: 5px 5px 10px 1px #777;
-}
-.team-content-card div:first-child{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
+    background-color: $white;
+    z-index: 10;
 }
 .team-content-card *{
     margin: 5px;
 }
 .team-content-card p{
     color: black;
-    text-align: left;
+    text-align: center;
 }
 .team-content-card div{
     display: flex;
     flex-direction: column;
+}
+.try{
+    position: absolute;
+    width: 100%;
+    min-height: 750px;
+    top: 0px;
+    background: url("images//red_building.jpg");
+    background-size: cover;
+    z-index: 0;
+}
+.try:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images//splash.jpg");
+    background-size: 1200px;
+    background-position: center;
+    mix-blend-mode: screen;
+    z-index: 0;
 }
 
 /*----------團隊介紹----------*/
