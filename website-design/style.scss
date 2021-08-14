@@ -689,13 +689,25 @@ input[name="r1"]{
     .side.active ul{
         display: block;
     }
-    .side.active ul li a{
-        justify-content: center;
-    }
     .content{
         width: 100%;
         left: 0px;
     }
+
+/*----------歷史故事----------*/
+    .history-content{
+        height: 500px;
+    }
+    .history-content div{
+        height: 500px;
+    }
+    .history-content h2{
+        margin-top: 20px;
+    }
+    .history-content p{
+        margin: 0px 20px 20px 20px;
+    }
+/*----------歷史故事----------*/
 
 /*----------建築特色----------*/
 
