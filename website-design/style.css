@@ -926,6 +926,11 @@ input[name="r1"] {
   .history-content p {
     margin: 0px 20px 20px 20px;
   }
+  #history-page {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   /*----------歷史故事----------*/
   /*----------建築特色----------*/
   #structure div {
