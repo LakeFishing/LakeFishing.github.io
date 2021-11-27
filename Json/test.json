@@ -1,3 +1,23 @@
-{
-    "first": "theFirstData"
-}
+[{
+        "course-name-zh": "數位學習導論",
+        "course-name-en": "Introduction to Digital Learning",
+        "course-term": "大一上",
+        "course-class": "主修",
+        "course-mojor": true,
+        "course-information": {
+            "introduction": "",
+            "score-type": ""
+        }
+    },
+    {
+        "course-name-zh": "計算機概論",
+        "course-name-en": "Introduction to Cumputer Science",
+        "course-term": "大一上",
+        "course-class": "主修",
+        "course-mojor": true,
+        "course-information": {
+            "introduction": "",
+            "score-type": ""
+        }
+    }
+]
