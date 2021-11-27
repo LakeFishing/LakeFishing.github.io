@@ -38,8 +38,8 @@
             </div>
             <div class="news-pages">
                 <div class="news-page-1">
-                    <h1>數位系考古題題庫</h1>
-                    <h3>我全都要！！！</h3>
+                    <h1>數位系 / 考古題 / 題庫</h1>
+                    <h3>全科目近三年以上考古題彙總</h3>
                 </div>
                 <div class="news-page-2">
                     <h1>數位系考古題題庫</h1>
@@ -54,22 +54,38 @@
             <div v-for="item in homeGroupData" class="group-items">
                 <img :src="item.ui" alt="">
                 <div>
-                    <div>
-                        <h2>{{ item.title }}</h2>
-                    </div>
+                    <h2>{{ item.title }}</h2>
+                    <span></span>
                     <p>{{ item.introduce }}</p>
                     <a :href="item.url">前往</a>
                 </div>
             </div>
         </div>
         <footer class="bottom-bar">
-
+            <div>
+                <div>
+                    <h3>相關單位</h3>
+                    <span></span>
+                    <a href="https://www.nutn.edu.tw/" target="_blank">南大首頁</a>
+                    <a href="http://ilt.nutn.edu.tw/" target="_blank">數位系首頁</a>
+                </div>
+                <div>
+                    <h3>實用連結</h3>
+                    <span></span>
+                    <a href="https://ecourse.nutn.edu.tw/" target="_blank">E-Course課程網站</a>
+                    <a href="https://academics.nutn.edu.tw/SelSys/" target="_blank">南大選課系統</a>
+                    <a href="https://academics.nutn.edu.tw/iSTU/" target="_blank">南大學生系統</a>
+                </div>
+                <div>
+                    <h3>聯繫</h3>
+                    <span></span>
+                    <a>Discord：YellowToFish#5671</a>
+                    <a>Gmail：s10855033@gm2.nutn.edu.tw</a>
+                </div>
+            </div>
+            <div>Copyright © 2021 YellowToFish</div>
         </footer>
     </div>
-
-
-
-
 
     <script>
         Vue.createApp({

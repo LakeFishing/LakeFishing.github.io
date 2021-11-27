@@ -20,6 +20,7 @@ function toPageTrd(){
 window.onscroll = function(){
     if(document.documentElement.scrollTop >= 64){
         topBar[0].style.background = "white";
+        topBar[0].style.borderBottom = "1px solid black";
         for (var i = 0; i < topBarItem.length; i++){
             topBarItem[i].style.color = "black";
             topBarItem[i].style.transition = "0.3s ease-in";
@@ -27,6 +28,7 @@ window.onscroll = function(){
     }
     else{
         topBar[0].style.background = "transparent";
+        topBar[0].style.borderBottom = "none";
         for (var i = 0; i < topBarItem.length; i++){
             topBarItem[i].style.color = "white";
             topBarItem[i].style.transition = "none";
